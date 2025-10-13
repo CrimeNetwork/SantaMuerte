@@ -158,18 +158,48 @@
     </div>
   </footer>
 
-  <script>
-    function openTab(tabName) {
-      const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(c => c.style.display = 'none');
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tabs = document.querySelectorAll(".tab-button");
+  const tabContents = document.querySelectorAll(".tab-content");
 
-      const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(b => b.classList.remove('active'));
+  // Initialize tab contents: show first, hide rest
+  tabContents.forEach((content, index) => {
+    content.style.opacity = "0";
+    content.style.transition = "opacity 0.3s ease";
+    content.style.display = index === 0 ? "grid" : "none";
+  });
 
-      document.getElementById(tabName).style.display = 'block';
-      event.currentTarget.classList.add('active');
-    }
-  </script>
+  // Activate first tab
+  if (tabs.length > 0) tabs[0].classList.add("active");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active from all tabs
+      tabs.forEach(btn => btn.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Hide all contents with fade-out
+      tabContents.forEach(content => {
+        content.style.opacity = "0";
+        setTimeout(() => { content.style.display = "none"; }, 300);
+      });
+
+      // Show selected tab with fade-in
+      const targetId = tab.dataset.target;
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.style.display = "grid";
+        setTimeout(() => { targetContent.style.opacity = "1"; }, 20);
+
+        // Scroll to top of new tab content smoothly
+        targetContent.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
 
    <script>
 const hamburger = document.querySelector('.hamburger');
