@@ -1,34 +1,23 @@
 <!--
-Static PasteBin —  with Example Pastes
+Static PasteBin — Doxbin Clone with Full Styling
 - Fully static
-- Users section, categories, search
-- All pastes manually added
+- Doxbin-like style, users, categories, search
+- Pastes added manually in HTML
 -->
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Static PasteBine</title>
-<style>
-body{margin:0;font-family:Inter,system-ui;color:#e6eef6;background:#0f1724}
-header,nav,main{padding:16px}
-.container{display:flex;max-width:1200px;margin:0 auto}
-nav{width:220px;background:#0b1220;border-radius:12px;margin-right:12px;padding:12px}
-nav h2{font-size:18px;margin:12px 0 6px 0}
-nav input,nav button{margin:4px 0;padding:6px;border-radius:6px;border:none;width:calc(100%-12px)}
-main{flex:1;background:#0b1220;border-radius:12px;padding:16px}
-.paste{padding:12px;margin-bottom:8px;background:rgba(255,255,255,0.02);border-radius:10px}
-.paste .title{font-weight:600}
-.paste .meta{font-size:12px;color:#9aa4b2}
-.users{background:rgba(255,255,255,0.03);padding:10px;border-radius:8px;margin-bottom:8px}
-.search input{width:100%;padding:6px;border-radius:6px;border:none;margin-bottom:6px}
-button{background:#7dd3fc;color:#022;padding:6px 12px;border:none;border-radius:8px;cursor:pointer}
-</style>
+<title>Static PasteBin — Doxbin Clone</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-<h1>Static PasteBin</h1>
+  <div class="header-container">
+    <h1>Static PasteBin</h1>
+    <span class="subtitle">Doxbin Clone</span>
+  </div>
 </header>
 <div class="container">
   <nav>
@@ -56,7 +45,6 @@ button{background:#7dd3fc;color:#022;padding:6px 12px;border:none;border-radius:
   <main>
     <h2>Pastes</h2>
     <div id="pasteList">
-      <!-- Example pastes -->
       <div class="paste" data-title="Hello World JS" data-category="Scripts" data-author="Admin">
         <div class="title">Hello World JS</div>
         <div class="meta">Author: Admin | Category: Scripts | Date: 2025-10-13</div>
