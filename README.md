@@ -12,18 +12,18 @@ The Crime Network website provides comprehensive information about our mission, 
 
 The repository is organized as follows:
 
-- `index.html`: The homepage of the Crime Network website.
-- `documentation.html`: A page listing all available documentation articles.
-- `about.html`: Information about the Crime Network organization and its mission.
-- `staff.html`: Details about the team members behind Crime Network.
-- `docs/`: A directory containing individual documentation articles, each in its own folder (e.g., `docs/r20crips/index.html` for the Rolling 20's Crip Gang article).
+- `index`: The homepage of the Crime Network website.
+- `documentation`: A page listing all available documentation articles.
+- `about`: Information about the Crime Network organization and its mission.
+- `staff`: Details about the team members behind Crime Network.
+- `docs/`: A directory containing individual documentation articles, each in its own folder (e.g., `docs/r20crips/index` for the Rolling 20's Crip Gang article).
 - `assets/`: A directory containing all static assets, including CSS files, images, and other resources.
 
 ## 📄 Documentation
 
 Each documentation article is stored in its own folder within the docs/ directory. For example, the Rolling 20's Crip Gang article can be found at docs/r20crips/index.html. Each article follows a consistent structure:
 - Title: The name of the topic.
-- Category: The classification of the topic (e.g., Real-Life Gangs).
+- Category: The classification of the topic (e.g., Gangs).
 - Date: The date the article was published or last updated.
 - Content: Detailed information about the topic, including background, investigation details, and media.
 
