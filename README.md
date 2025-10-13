@@ -1,4 +1,4 @@
-# CrimeNetwork-Website
+# CrimeNetwork Website
 
 Welcome to the official repository for the Crime Network website. This project serves as the central hub for all documentation, informational pages, and resources related to the Crime Network initiative.
 
