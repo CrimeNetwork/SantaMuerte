@@ -143,6 +143,16 @@
           <p>Placeholder desc</p>
           <a href="#" class="more-btn">Click me for more</a>
         </div>
+        <div class="doc-card">
+          <h3>Placeholder title</h3>
+          <p>Placeholder desc</p>
+          <a href="#" class="more-btn">Click me for more</a>
+        </div>
+        <div class="doc-card">
+          <h3>Placeholder title</h3>
+          <p>Placeholder desc</p>
+          <a href="#" class="more-btn">Click me for more</a>
+        </div>
       </div>
     </div>
   </main>
@@ -157,58 +167,68 @@
   </footer>
 
   <!-- JS: Tabs & Fade Fixed -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const tabs = document.querySelectorAll(".tab-button");
-    const tabContents = document.querySelectorAll(".tab-content");
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tabs = document.querySelectorAll(".tab-button");
+  const tabContents = document.querySelectorAll(".tab-content");
 
-    // Assign data-target from onclick attribute
-    tabs.forEach(tab => {
-      const targetId = tab.getAttribute("onclick").match(/'([^']+)'/)[1];
-      tab.dataset.target = targetId;
-    });
+  // Assign data-target from onclick attribute
+  tabs.forEach(tab => {
+    const targetId = tab.getAttribute("onclick").match(/'([^']+)'/)[1];
+    tab.dataset.target = targetId;
+  });
 
-    // Hide all tab contents except first
-    tabContents.forEach((content, index) => {
-      content.style.opacity = "0";
-      content.style.transition = "opacity 0.3s ease";
-      content.style.display = index === 0 ? "grid" : "none";
-    });
+  // Hide all tab contents initially
+  tabContents.forEach(content => {
+    content.style.opacity = "0";
+    content.style.transition = "opacity 0.3s ease";
+    content.style.display = "none";
+  });
 
-    // Activate first tab
-    if (tabs.length > 0) tabs[0].classList.add("active");
+  // Activate the first tab (Security Breaches) automatically
+  if (tabs.length > 0) {
+    const firstTab = tabs[0];
+    firstTab.classList.add("active");
+    const firstContent = document.getElementById(firstTab.dataset.target);
+    if (firstContent) {
+      firstContent.style.display = "block";
+      firstContent.style.opacity = "1";
+      const container = firstContent.querySelector(".doc-container");
+      if (container) container.style.display = "grid";
+    }
+  }
 
-    tabs.forEach(tab => {
-      tab.addEventListener("click", () => {
-        // Remove active from all tabs
-        tabs.forEach(btn => btn.classList.remove("active"));
-        tab.classList.add("active");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active from all tabs
+      tabs.forEach(btn => btn.classList.remove("active"));
+      tab.classList.add("active");
 
-        const targetContent = document.getElementById(tab.dataset.target);
+      const targetContent = document.getElementById(tab.dataset.target);
 
-        // Hide all other tab contents
-        tabContents.forEach(content => {
-          if (content !== targetContent) {
-            content.style.opacity = "0";
-            setTimeout(() => { content.style.display = "none"; }, 300);
-          }
-        });
-
-        // Show selected tab
-        if (targetContent) {
-          const container = targetContent.querySelector(".doc-container");
-          if (container) container.style.display = "grid";
-
-          targetContent.style.display = "block";
-          setTimeout(() => { targetContent.style.opacity = "1"; }, 20);
-
-          // Scroll to top
-          targetContent.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Hide all other tab contents
+      tabContents.forEach(content => {
+        if (content !== targetContent) {
+          content.style.opacity = "0";
+          setTimeout(() => { content.style.display = "none"; }, 300);
         }
       });
+
+      // Show selected tab
+      if (targetContent) {
+        const container = targetContent.querySelector(".doc-container");
+        if (container) container.style.display = "grid";
+
+        targetContent.style.display = "block";
+        setTimeout(() => { targetContent.style.opacity = "1"; }, 20);
+
+        // Scroll to top
+        targetContent.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
   });
-  </script>
+});
+</script>
 
   <!-- Hamburger -->
   <script>
