@@ -139,3 +139,37 @@ footer {
     align-items: center;
   }
 }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tab-button {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.tab-button.active {
+  background-color: #00bfff;
+  color: #121212;
+}
+
+.tab-button:hover {
+  background-color: #333;
+}
+
+.tab-content {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+}
+
