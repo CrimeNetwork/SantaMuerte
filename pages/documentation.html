@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation - Crime Network</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Crime Network</div>
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><a href="documentation" class="active">Documentation</a></li>
+        <li><a href="staff">Staff</a></li>
+        <li><a href="about">About</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Crime Network Documentation</h1>
+      <p>Explore investigations, digital threats, and real-world criminal activity.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab('breaches')">Security Breaches</button>
+      <button class="tab-button" onclick="openTab('crimes')">Real-Life Crimes</button>
+      <button class="tab-button" onclick="openTab('gangs')">Real-Life Gangs</button>
+    </div>
+
+    <!-- SECURITY BREACHES TAB -->
+    <div id="breaches" class="tab-content" style="display:block;">
+      <h2>Security Breaches</h2>
+
+      <div class="story-card">
+        <h3>Facebook Data Leak (2021)</h3>
+        <p>Over 500 million user profiles were exposed due to a misconfigured API, highlighting major privacy risks.</p>
+        <a href="docs/facebook-leak/index" class="more-btn">Click me for more</a>
+      </div>
+
+      <div class="story-card">
+        <h3>Equifax Breach (2017)</h3>
+        <p>A major credit bureau was compromised, exposing the financial data of 147 million people.</p>
+        <a href="docs/equifax-breach/index" class="more-btn">Click me for more</a>
+      </div>
+    </div>
+
+    <!-- REAL-LIFE CRIMES TAB -->
+    <div id="crimes" class="tab-content">
+      <h2>Real-Life Crimes</h2>
+
+      <div class="story-card">
+        <h3>Silk Road Case</h3>
+        <p>The story of Ross Ulbricht and the dark web marketplace that changed cybercrime forever.</p>
+        <a href="docs/silk-road/index" class="more-btn">Click me for more</a>
+      </div>
+
+      <div class="story-card">
+        <h3>Operation Ghost Click</h3>
+        <p>FBI takedown of an international cybercrime ring manipulating online ads and search results.</p>
+        <a href="docs/ghost-click/index" class="more-btn">Click me for more</a>
+      </div>
+    </div>
+
+    <!-- REAL-LIFE GANGS TAB -->
+    <div id="gangs" class="tab-content">
+      <h2>Real-Life Gangs</h2>
+
+      <div class="story-card">
+        <h3>Rolling 20's Crip Gang</h3>
+        <p>One of the most recognized Crip sets in Los Angeles, known for influence across the West Coast.</p>
+        <a href="docs/r20crips/index" class="more-btn">Click me for more</a>
+      </div>
+
+      <div class="story-card">
+        <h3>MS-13</h3>
+        <p>International criminal gang originating in Los Angeles with operations across Central America and the U.S.</p>
+        <a href="docs/ms13/index" class="more-btn">Click me for more</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Crime Network. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openTab(tabName) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => c.style.display = 'none');
+
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      document.getElementById(tabName).style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
