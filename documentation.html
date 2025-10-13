@@ -24,46 +24,62 @@
   </header>
 
   <main>
+    <!-- Tabs -->
     <div class="tabs">
       <button class="tab-button active" onclick="openTab('breaches')">Security Breaches</button>
       <button class="tab-button" onclick="openTab('crimes')">Real-Life Crimes</button>
       <button class="tab-button" onclick="openTab('gangs')">Real-Life Gangs</button>
     </div>
 
+    <!-- SECURITY BREACHES TAB -->
     <div id="breaches" class="tab-content" style="display:block;">
       <h2>Security Breaches</h2>
-      <article>
-        <h3>Example Breach 1</h3>
-        <p>Details about this breach, how it happened, and what to learn from it.</p>
-      </article>
-      <article>
-        <h3>Example Breach 2</h3>
-        <p>Another breach example with analysis and prevention tips.</p>
-      </article>
+
+      <div class="story-card">
+        <h3>Facebook Data Leak (2021)</h3>
+        <p>Over 500 million user profiles were exposed due to a misconfigured API, highlighting major privacy risks.</p>
+        <a href="docs/facebook-leak/index.html" class="more-btn">Click me for more</a>
+      </div>
+
+      <div class="story-card">
+        <h3>Equifax Breach (2017)</h3>
+        <p>A major credit bureau was compromised, exposing the financial data of 147 million people.</p>
+        <a href="docs/equifax-breach/index.html" class="more-btn">Click me for more</a>
+      </div>
     </div>
 
+    <!-- REAL-LIFE CRIMES TAB -->
     <div id="crimes" class="tab-content">
       <h2>Real-Life Crimes</h2>
-      <article>
-        <h3>Case Study 1</h3>
-        <p>Story, outcome, and key takeaways.</p>
-      </article>
-      <article>
-        <h3>Case Study 2</h3>
-        <p>Story, outcome, and key takeaways.</p>
-      </article>
+
+      <div class="story-card">
+        <h3>Silk Road Case</h3>
+        <p>The story of Ross Ulbricht and the dark web marketplace that changed cybercrime forever.</p>
+        <a href="docs/silk-road/index.html" class="more-btn">Click me for more</a>
+      </div>
+
+      <div class="story-card">
+        <h3>Operation Ghost Click</h3>
+        <p>FBI takedown of an international cybercrime ring manipulating online ads and search results.</p>
+        <a href="docs/ghost-click/index.html" class="more-btn">Click me for more</a>
+      </div>
     </div>
 
+    <!-- REAL-LIFE GANGS TAB -->
     <div id="gangs" class="tab-content">
       <h2>Real-Life Gangs</h2>
-      <article>
-        <h3>Gang 1</h3>
-        <p>Overview, territory, and known criminal activity.</p>
-      </article>
-      <article>
-        <h3>Gang 2</h3>
-        <p>Overview, territory, and known criminal activity.</p>
-      </article>
+
+      <div class="story-card">
+        <h3>Rolling 20's Crip Gang</h3>
+        <p>One of the most recognized Crip sets in Los Angeles, known for influence across the West Coast.</p>
+        <a href="docs/r20crips/index.html" class="more-btn">Click me for more</a>
+      </div>
+
+      <div class="story-card">
+        <h3>MS-13</h3>
+        <p>International criminal gang originating in Los Angeles with operations across Central America and the U.S.</p>
+        <a href="docs/ms13/index.html" class="more-btn">Click me for more</a>
+      </div>
     </div>
   </main>
 
@@ -73,15 +89,12 @@
 
   <script>
     function openTab(tabName) {
-      // Hide all tab contents
       const contents = document.querySelectorAll('.tab-content');
-      contents.forEach(content => content.style.display = 'none');
+      contents.forEach(c => c.style.display = 'none');
 
-      // Remove active class from buttons
       const buttons = document.querySelectorAll('.tab-button');
-      buttons.forEach(btn => btn.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
 
-      // Show selected tab and mark button active
       document.getElementById(tabName).style.display = 'block';
       event.currentTarget.classList.add('active');
     }
