@@ -366,3 +366,41 @@ footer a {
     margin-bottom: 6rem; /* extra spacing for footer */
   }
 }
+
+/* ================= Documentation Cards Grid ================= */
+.doc-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row on desktop */
+  gap: 20px;
+  padding: 1rem 2%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.doc-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.doc-card:hover {
+  transform: scale(1.02);
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+/* Responsive: stack documentation cards on smaller screens */
+@media (max-width: 768px) {
+  .doc-container {
+    grid-template-columns: 1fr; /* stack vertically on tablets/small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .doc-container {
+    grid-template-columns: 1fr; /* stack vertically on mobile */
+    padding: 1rem;
+  }
+}
