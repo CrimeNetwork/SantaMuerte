@@ -12,7 +12,7 @@
       <div class="logo">Crime Network</div>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="documentation.html">Documentation</a></li>
+        <li><a href="documentation.html" class="active">Documentation</a></li>
         <li><a href="staff.html">Staff</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
@@ -24,7 +24,13 @@
   </header>
 
   <main>
-    <section class="doc-section">
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab('breaches')">Security Breaches</button>
+      <button class="tab-button" onclick="openTab('crimes')">Real-Life Crimes</button>
+      <button class="tab-button" onclick="openTab('gangs')">Real-Life Gangs</button>
+    </div>
+
+    <div id="breaches" class="tab-content" style="display:block;">
       <h2>Security Breaches</h2>
       <article>
         <h3>Example Breach 1</h3>
@@ -34,9 +40,9 @@
         <h3>Example Breach 2</h3>
         <p>Another breach example with analysis and prevention tips.</p>
       </article>
-    </section>
+    </div>
 
-    <section class="doc-section">
+    <div id="crimes" class="tab-content">
       <h2>Real-Life Crimes</h2>
       <article>
         <h3>Case Study 1</h3>
@@ -46,9 +52,9 @@
         <h3>Case Study 2</h3>
         <p>Story, outcome, and key takeaways.</p>
       </article>
-    </section>
+    </div>
 
-    <section class="doc-section">
+    <div id="gangs" class="tab-content">
       <h2>Real-Life Gangs</h2>
       <article>
         <h3>Gang 1</h3>
@@ -58,11 +64,27 @@
         <h3>Gang 2</h3>
         <p>Overview, territory, and known criminal activity.</p>
       </article>
-    </section>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Crime Network. All rights reserved.</p>
   </footer>
+
+  <script>
+    function openTab(tabName) {
+      // Hide all tab contents
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.style.display = 'none');
+
+      // Remove active class from buttons
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Show selected tab and mark button active
+      document.getElementById(tabName).style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
 </html>
