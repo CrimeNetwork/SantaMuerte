@@ -7,6 +7,51 @@
   <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
+    <style>
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b0b0b; /* Dark footer */
+      color: #e5e5e5;
+      flex-wrap: wrap;
+      border-top: 1px solid #1f1f1f;
+    }
+
+    .footer-text {
+      font-size: 14px;
+    }
+
+    .footer-buttons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-buttons a {
+      color: #00b3b3;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+      padding: 6px 0;
+    }
+
+    .footer-buttons a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-buttons {
+        margin-top: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -85,8 +130,13 @@
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Crime Network. All rights reserved.</p>
+ <footer>
+    <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+    <div class="footer-buttons">
+      <a href="privacy">Privacy Policy</a>
+      <a href="tos">Terms of Service</a>
+      <a href="about">About</a>
+    </div>
   </footer>
 
   <script>
