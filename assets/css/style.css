@@ -217,3 +217,78 @@ footer {
   transform: scale(1.05);
 }
 
+/* Story Pages */
+.story-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.15);
+}
+
+.story-page h1 {
+  color: #00bfff;
+  margin-bottom: 0.5rem;
+}
+
+.story-page .subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.story-banner {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.story-page h2 {
+  color: #00bfff;
+  margin-top: 2rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.3rem;
+}
+
+.story-page p {
+  color: #ddd;
+  line-height: 1.7;
+}
+
+.story-page ul {
+  margin-left: 1.5rem;
+  color: #ccc;
+}
+
+.story-image {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.sources li a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.sources li a:hover {
+  text-decoration: underline;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #00bfff;
+  color: #121212;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.back-btn:hover {
+  background-color: #0094cc;
+  transform: scale(1.05);
+}
