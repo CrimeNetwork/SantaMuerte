@@ -156,7 +156,7 @@
     </div>
   </footer>
 
-  <!-- JS: Tabs & Fade -->
+  <!-- JS: Tabs & Fade Fixed -->
   <script>
   document.addEventListener("DOMContentLoaded", function() {
     const tabs = document.querySelectorAll(".tab-button");
@@ -184,14 +184,17 @@
         tabs.forEach(btn => btn.classList.remove("active"));
         tab.classList.add("active");
 
-        // Hide all tab contents
+        const targetContent = document.getElementById(tab.dataset.target);
+
+        // Hide all other tab contents
         tabContents.forEach(content => {
-          content.style.opacity = "0";
-          setTimeout(() => { content.style.display = "none"; }, 300);
+          if (content !== targetContent) {
+            content.style.opacity = "0";
+            setTimeout(() => { content.style.display = "none"; }, 300);
+          }
         });
 
         // Show selected tab
-        const targetContent = document.getElementById(tab.dataset.target);
         if (targetContent) {
           const container = targetContent.querySelector(".doc-container");
           if (container) container.style.display = "grid";
