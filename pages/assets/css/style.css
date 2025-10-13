@@ -87,8 +87,9 @@ nav li:hover {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  align-items: flex-start; /* prevent cutting off text */
   padding: 2rem;
-  margin-bottom: 4rem; /* ensures footer doesn't overlap */
+  margin-bottom: 4rem; /* footer spacing */
 }
 
 .staff-card {
@@ -100,6 +101,8 @@ nav li:hover {
   max-width: 250px;
   padding-bottom: 1rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* stack banner, image, text */
 }
 
 .staff-card .banner {
@@ -113,10 +116,10 @@ nav li:hover {
 }
 
 .staff-card .pfp {
-  width: 80%;           /* scale with card width */
-  max-width: 120px;     /* cap on large cards */
-  aspect-ratio: 1 / 1;  /* keep square */
-  object-fit: cover;    /* crop nicely */
+  width: 80%;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 50%;
   margin-top: -50px;
   border: 3px solid #00bfff;
