@@ -7,49 +7,79 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #0b0b0b; /* Dark footer */
+    main {
+      padding: 40px 10%;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 25px;
+      background-color: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 179, 179, 0.2);
+    }
+
+    h1, h2, h3 {
+      color: #00b3b3;
+      margin-bottom: 15px;
+    }
+
+    .psa {
+      border-left: 5px solid #00b3b3;
+      background-color: #0d0d0d;
+      padding: 20px 25px;
+    }
+
+    .about-section p, .history-section p, .mission-section p {
+      line-height: 1.7;
+      margin-bottom: 15px;
       color: #e5e5e5;
-      flex-wrap: wrap;
-      border-top: 1px solid #1f1f1f;
     }
 
-    .footer-text {
-      font-size: 14px;
+    .history-section, .mission-section, .social-section {
+      margin-top: 20px;
     }
 
-    .footer-buttons {
+    ul {
+      list-style: disc inside;
+      margin-left: 15px;
+      line-height: 1.6;
+    }
+
+    .social-links {
       display: flex;
-      gap: 18px;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
     }
 
-    .footer-buttons a {
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       color: #00b3b3;
       text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-      padding: 6px 0;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background-color: #0b0b0b;
+      transition: all 0.3s;
+      box-shadow: 0 0 5px rgba(0, 179, 179, 0.3);
     }
 
-    .footer-buttons a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 8px #00ffff;
+    .social-links a:hover {
+      color: #0b0b0b;
+      background-color: #00b3b3;
+      box-shadow: 0 0 15px #00b3b3;
     }
 
-    @media (max-width: 600px) {
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-buttons {
-        margin-top: 10px;
-      }
+    .social-links a i {
+      font-size: 18px;
     }
   </style>
 </head>
@@ -118,10 +148,10 @@
       <h2>Connect With Us</h2>
       <p>Stay up-to-date with the latest investigations, cybersecurity updates, and public reports:</p>
       <div class="social-links">
-        <a href="#">Twitter</a>
-        <a href="#">YouTube</a>
-        <a href="#">Discord</a>
-        <a href="#">GitHub</a>
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="#"><i class="fab fa-discord"></i> Discord</a>
+        <a href="#"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </section>
   </main>
