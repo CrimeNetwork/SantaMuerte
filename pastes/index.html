@@ -1,6 +1,6 @@
 <!--
-Static PasteBin — Fully Interactive Doxbin Clone (Static HTML + CSS)
-- Categories clickable
+Static PasteBin — Fully Styled Doxbin Clone (Dark-Blue Theme, Interactive)
+- Categories clickable and filter pastes
 - Users clickable to profile pages
 - Paste titles clickable, open in modal overlay
 - Only titles shown on main page
@@ -11,9 +11,96 @@ Static PasteBin — Fully Interactive Doxbin Clone (Static HTML + CSS)
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Static PasteBin — Doxbin Clone</title>
-<link rel="stylesheet" href="style.css">
 <style>
-/* Modal Styles */
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0b1220;
+  color: #eee;
+}
+.header-container {
+  background-color: #111a28;
+  padding: 16px;
+  text-align: center;
+  border-bottom: 2px solid #7dd3fc;
+}
+.header-container h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #7dd3fc;
+}
+.header-container .subtitle {
+  font-size: 14px;
+  color: #9aa4b2;
+}
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+nav {
+  width: 220px;
+  background-color: #111a28;
+  border-radius: 8px;
+  padding: 12px;
+  margin-right: 12px;
+}
+nav h2 {
+  font-size: 18px;
+  margin: 12px 0 6px 0;
+  color: #7dd3fc;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+}
+nav a p {
+  margin: 4px 0;
+  padding: 4px;
+  border-radius: 4px;
+  color: #7dd3fc;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+nav a p:hover {
+  background-color: #333;
+}
+nav input {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 6px;
+  background-color: #222;
+  color: #eee;
+}
+main {
+  flex: 1;
+  background-color: #111a28;
+  border-radius: 8px;
+  padding: 16px;
+}
+.paste {
+  background-color: #0f182b;
+  border-left: 4px solid #7dd3fc;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+.paste .title a {
+  color: #7dd3fc;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+}
+.paste .title a:hover {
+  text-decoration: underline;
+}
+.paste .meta {
+  font-size: 12px;
+  color: #9aa4b2;
+  margin-bottom: 8px;
+}
 .modal {
   position: fixed;
   top: 0;
@@ -27,7 +114,7 @@ Static PasteBin — Fully Interactive Doxbin Clone (Static HTML + CSS)
   z-index: 1000;
 }
 .modal-content {
-  background-color: #222;
+  background-color: #111a28;
   padding: 20px;
   border-radius: 8px;
   width: 80%;
@@ -43,7 +130,6 @@ Static PasteBin — Fully Interactive Doxbin Clone (Static HTML + CSS)
   font-size: 24px;
   cursor: pointer;
 }
-/* Hide pre on main page */
 .paste pre { display: none; }
 </style>
 </head>
@@ -116,7 +202,7 @@ user_input = input("Enter value: ")</pre>
   </main>
 </div>
 <script>
-function filterPastes(term) {
+function filterPastes(term = '') {
   const categoryFilter = new URLSearchParams(window.location.hash.substring(1)).get('category');
   term = term.toLowerCase();
   document.querySelectorAll('.paste').forEach(p => {
@@ -132,6 +218,10 @@ function filterPastes(term) {
     }
   });
 }
+
+// Initial filter on page load
+window.addEventListener('load', () => filterPastes());
+window.addEventListener('hashchange', () => filterPastes());
 
 function openPasteModal(title) {
   const paste = document.querySelector(`.paste[data-title='${title}']`);
