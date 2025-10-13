@@ -12,6 +12,7 @@
   <header>
     <nav>
       <div class="logo">Crime Network</div>
+      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
       <ul>
         <li><a href="/CrimeNetwork/pages/index">Home</a></li>
         <li><a href="/CrimeNetwork/pages/documentation">Documentation</a></li>
@@ -83,8 +84,23 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Crime Network. All rights reserved.</p>
-  </footer>
+<footer style="margin-top: 2rem;">
+  <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+  <div class="footer-buttons">
+    <a href="privacy">Privacy Policy</a>
+    <a href="tos">Terms of Service</a>
+    <a href="about">About</a>
+  </div>
+</footer>
+
+  <script>
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
+  
 </body>
 </html>
