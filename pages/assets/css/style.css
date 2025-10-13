@@ -1,4 +1,4 @@
-/* General */
+/* ================= General ================= */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -11,12 +11,13 @@ a {
   text-decoration: none;
 }
 
+/* ================= Header ================= */
 header {
   background-color: #1e1e1e;
   padding-bottom: 2rem;
 }
 
-/* Navigation */
+/* ================= Navigation ================= */
 nav {
   display: flex;
   justify-content: space-between;
@@ -39,53 +40,52 @@ nav li:hover {
   border-radius: 5px;
 }
 
-/* Hero */
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: #00bfff;
+  cursor: pointer;
+}
+
+/* ================= Hero ================= */
 .hero {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 4rem 2%;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(1.6rem, 5vw, 3rem);
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Features */
+/* ================= Features ================= */
 .features {
   display: flex;
-  justify-content: space-around;
-  padding: 2rem;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .feature {
   background-color: #1e1e1e;
   padding: 1.5rem;
   border-radius: 10px;
-  flex: 1;
+  flex: 1 1 250px;
+  max-width: 350px;
 }
 
-/* Documentation */
-.doc-section {
-  padding: 2rem;
-  border-bottom: 1px solid #333;
-}
-
-.doc-section article {
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-}
-
-/* Staff Cards */
+/* ================= Staff Cards ================= */
 .staff-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
   padding: 2rem;
 }
@@ -96,51 +96,67 @@ nav li:hover {
   width: 250px;
   text-align: center;
   overflow: hidden;
+  flex: 1 1 200px;
+  max-width: 250px;
 }
 
-.staff-card .banner {
-  height: 100px;
-  background-size: cover;
-  background-position: center;
-}
-
-.staff-card .pfp {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-top: -50px;
-  border: 3px solid #00bfff;
-}
-
-.staff-card h3 {
-  margin: 0.5rem 0 0.2rem 0;
-}
-
-.staff-card p {
-  margin: 0 0 1rem 0;
-  color: #aaa;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
+/* ================= Story Cards ================= */
+.story-card {
   background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+  border: 1px solid #2a2a2a;
+  flex: 1 1 250px;
+  max-width: 350px;
+}
+
+.story-card:hover {
+  transform: scale(1.02);
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+}
+
+/* ================= Story Pages ================= */
+.story-page {
+  width: 95%;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.15);
+}
+
+.story-page h1 {
+  color: #00bfff;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.story-page h2 {
+  color: #00bfff;
   margin-top: 2rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.3rem;
+  font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
-/* Responsive */
-@media(max-width: 768px) {
-  .features {
-    flex-direction: column;
-  }
-  .staff-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+.story-page p {
+  color: #ddd;
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
-/* Tabs */
+.story-banner,
+.story-image {
+  width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* ================= Tabs ================= */
 .tabs {
   display: flex;
   justify-content: center;
@@ -175,120 +191,124 @@ footer {
   margin: 0 auto 2rem auto;
 }
 
-/* Story Cards */
-.story-card {
-  background-color: #1e1e1e;
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin: 1rem 0;
-  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-  border: 1px solid #2a2a2a;
+/* ================= Footer ================= */
+footer {
+  text-align: center;
+  padding: 1rem 2%;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
-.story-card:hover {
-  transform: scale(1.02);
-  background-color: #222;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-}
-
-.story-card h3 {
-  margin-top: 0;
-  color: #00bfff;
-}
-
-.story-card p {
-  color: #ccc;
-}
-
-.more-btn {
+/* Footer links spacing */
+footer a {
   display: inline-block;
-  margin-top: 0.8rem;
-  padding: 0.5rem 1rem;
-  background-color: #00bfff;
-  color: #121212;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.2s, transform 0.1s;
+  margin: 0.3rem 0.5rem;
 }
 
-.more-btn:hover {
-  background-color: #0094cc;
-  transform: scale(1.05);
+/* ================= Media Queries ================= */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
 }
 
-/* Story Pages */
-.story-page {
-  max-width: 900px;
-  margin: 2rem auto;
-  background-color: #1e1e1e;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.15);
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .staff-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
-.story-page h1 {
-  color: #00bfff;
-  margin-bottom: 0.5rem;
-}
+@media (max-width: 480px) {
+  nav ul {
+    display: none; /* Hide menu by default */
+  }
 
-.story-page .subtitle {
-  color: #888;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
+  nav.active ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
-.story-banner {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-}
+  .hamburger {
+    display: block;
+  }
 
-.story-page h2 {
-  color: #00bfff;
-  margin-top: 2rem;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 0.3rem;
-}
+  .hero {
+    padding: 2rem 1rem;
+  }
 
-.story-page p {
-  color: #ddd;
-  line-height: 1.7;
-}
+  .hero h1 {
+    font-size: 1.6rem;
+  }
 
-.story-page ul {
-  margin-left: 1.5rem;
-  color: #ccc;
-}
+  .hero p {
+    font-size: 0.9rem;
+  }
 
-.story-image {
-  width: 100%;
-  margin: 1rem 0;
-  border-radius: 8px;
-}
+  .features,
+  .staff-cards {
+    padding: 1rem 0.5rem;
+  }
 
-.sources li a {
-  color: #00bfff;
-  text-decoration: none;
-}
+  .feature,
+  .staff-card {
+    width: 100%;
+  }
 
-.sources li a:hover {
-  text-decoration: underline;
-}
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-.back-btn {
-  display: inline-block;
-  margin-top: 2rem;
-  background-color: #00bfff;
-  color: #121212;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.2s, transform 0.1s;
-}
+  .tab-button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
 
-.back-btn:hover {
-  background-color: #0094cc;
-  transform: scale(1.05);
+  .story-page {
+    padding: 1rem;
+  }
+
+  .story-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .story-page h2 {
+    font-size: 1.2rem;
+  }
 }
