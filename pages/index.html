@@ -56,6 +56,7 @@
 <body>
   <header>
     <nav>
+       <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
       <div class="logo">Crime Network</div>
       <ul>
         <li><a href="index">Home</a></li>
@@ -95,5 +96,15 @@
       <a href="about">About</a>
     </div>
   </footer>
+  <script>
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
+</body>
+
 </body>
 </html>
