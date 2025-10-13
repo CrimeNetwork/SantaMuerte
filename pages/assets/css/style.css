@@ -88,6 +88,7 @@ nav li:hover {
   gap: 1.5rem;
   justify-content: center;
   padding: 2rem;
+  margin-bottom: 4rem; /* ensures footer doesn't overlap */
 }
 
 .staff-card {
@@ -119,6 +120,12 @@ nav li:hover {
   border-radius: 50%;
   margin-top: -50px;
   border: 3px solid #00bfff;
+}
+
+.staff-card h3,
+.staff-card p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .staff-card h3 {
@@ -230,7 +237,6 @@ footer {
   font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
 
-/* Footer links spacing */
 footer a {
   display: inline-block;
   margin: 0.3rem 0.5rem;
@@ -351,5 +357,9 @@ footer a {
 
   .staff-card .banner {
     padding-top: 40%;
+  }
+
+  .staff-cards {
+    margin-bottom: 6rem; /* extra spacing for footer */
   }
 }
