@@ -13,9 +13,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
-      background-color: #111;
-      color: #fff;
+      background-color: #0b0b0b; /* Dark footer */
+      color: #e5e5e5;
       flex-wrap: wrap;
+      border-top: 1px solid #1f1f1f;
     }
 
     .footer-text {
@@ -24,26 +25,27 @@
 
     .footer-buttons {
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
 
     .footer-buttons a {
       display: inline-block;
       padding: 6px 14px;
-      border: 1px solid #fff;
+      border: 1px solid #00b3b3; /* Teal accent */
       border-radius: 8px;
-      color: #fff;
+      color: #00b3b3;
       text-decoration: none;
       transition: 0.3s;
       font-size: 14px;
+      background-color: transparent;
     }
 
     .footer-buttons a:hover {
-      background-color: #fff;
-      color: #111;
+      background-color: #00b3b3;
+      color: #0b0b0b;
+      box-shadow: 0 0 10px #00b3b3;
     }
 
-    /* Responsive fix for small screens */
     @media (max-width: 600px) {
       footer {
         flex-direction: column;
@@ -69,7 +71,7 @@
     </nav>
     <div class="hero">
       <h1>Crime Network</h1>
-      <p>The leading platform for private, secure, & reliable media & security services and information. </p>
+      <p>The leading platform for private, secure, & reliable media & security services and information.</p>
     </div>
   </header>
 
