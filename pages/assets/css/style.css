@@ -87,17 +87,17 @@ nav li:hover {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  align-items: flex-start; /* prevent cutting off text */
+  align-items: flex-start; /* prevents stretching/cutting off text */
   padding: 2rem;
-  margin-bottom: 4rem; /* footer spacing */
+  margin-bottom: 4rem; /* space for footer */
 }
 
 .staff-card {
   background-color: #1e1e1e;
   border-radius: 10px;
   text-align: center;
-  overflow: hidden;
-  flex: 1 1 200px;
+  overflow: visible;      /* ensures content isn't clipped */
+  flex: 1 1 auto;         /* allows card to grow naturally */
   max-width: 250px;
   padding-bottom: 1rem;
   box-sizing: border-box;
@@ -129,15 +129,14 @@ nav li:hover {
 .staff-card p {
   word-wrap: break-word;
   overflow-wrap: break-word;
+  margin: 0.5rem 0;
 }
 
 .staff-card h3 {
-  margin: 0.5rem 0 0.2rem 0;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .staff-card p {
-  margin: 0 0 1rem 0;
   color: #aaa;
   font-size: clamp(0.8rem, 2vw, 1rem);
 }
@@ -238,6 +237,7 @@ footer {
   text-align: center;
   padding: 1rem 2%;
   font-size: clamp(0.8rem, 2.5vw, 1rem);
+  margin-top: 2rem; /* optional extra spacing from content above */
 }
 
 footer a {
@@ -327,7 +327,8 @@ footer a {
 
   .feature,
   .staff-card {
-    width: 100%;
+    width: 90%;
+    max-width: none;
   }
 
   .tabs {
@@ -355,7 +356,6 @@ footer a {
 
   .staff-card .pfp {
     width: 50%;
-    max-width: none;
   }
 
   .staff-card .banner {
