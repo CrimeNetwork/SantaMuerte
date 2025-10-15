@@ -4,358 +4,259 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Documentation | Crime Network</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
 <style>
 /* ================= General ================= */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #f1f1f1;
-}
-
-a { color: #00bfff; text-decoration: none; }
+body { margin:0; font-family: Arial,sans-serif; background:#121212; color:#f1f1f1; }
+a { color:#00bfff; text-decoration:none; }
 
 /* ================= Header ================= */
-header {
-  background-color: #1e1e1e;
-  padding-bottom: 2rem;
-}
+header { background:#1e1e1e; padding-bottom:2rem; }
 
 /* ================= Navigation ================= */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-nav ul { list-style: none; display: flex; gap: 1rem; }
-
-nav li { padding: 0.5rem 1rem; }
-
-nav li:hover { background-color: #333; border-radius: 5px; }
-
-.hamburger { display: none; font-size: 1.5rem; color: #00bfff; cursor: pointer; }
+nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+nav ul { list-style:none; display:flex; gap:1rem; }
+nav li { padding:0.5rem 1rem; }
+nav li:hover { background:#333; border-radius:5px; }
+.hamburger { display:none; font-size:1.5rem; color:#00bfff; cursor:pointer; }
 
 /* ================= Hero ================= */
-.hero { text-align: center; padding: 4rem 2%; }
-
-.hero h1 { font-size: clamp(1.6rem, 5vw, 3rem); }
-
-.hero p { font-size: clamp(0.9rem, 2.5vw, 1.2rem); max-width: 800px; margin: 0 auto; }
+.hero { text-align:center; padding:4rem 2%; }
+.hero h1 { font-size:clamp(1.6rem,5vw,3rem); }
+.hero p { font-size:clamp(0.9rem,2.5vw,1.2rem); max-width:800px; margin:0 auto; }
 
 /* ================= Tabs ================= */
-.tabs { display: flex; justify-content: center; flex-wrap: wrap; margin: 2rem 0; }
-
-.tab-button {
-  background-color: #1e1e1e;
-  color: #f1f1f1;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.tab-button.active { background-color: #00bfff; color: #121212; }
-
-.tab-button:hover { background-color: #333; transform: scale(1.05); }
-
-.tab-content {
-  max-width: 1000px;
-  margin: 0 auto 2rem auto;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.tab-content.active { display: block; opacity: 1; }
+.tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:2rem 0; }
+.tab-button { background:#1e1e1e; color:#f1f1f1; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s; }
+.tab-button.active { background:#00bfff; color:#121212; }
+.tab-button:hover { background:#333; transform:scale(1.05); }
+.tab-content { max-width:1000px; margin:0 auto 2rem auto; display:none; opacity:0; transition:opacity 0.3s ease; }
+.tab-content.active { display:block; opacity:1; }
 
 /* ================= Search Box ================= */
-.search-container { text-align: center; margin-bottom: 15px; }
-
-.search-container input {
-  padding: 8px 12px;
-  width: 60%;
-  max-width: 400px;
-  border-radius: 6px;
-  border: 1px solid #333;
-  background: #1a1a1a;
-  color: #fff;
-}
+.search-container { text-align:center; margin-bottom:15px; }
+.search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #333; background:#1a1a1a; color:#fff; }
 
 /* ================= State Tabs ================= */
-.state-tabs {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  gap: 6px;
-  padding: 5px 0;
-  margin-bottom: 15px;
-}
-
-.state-tabs::-webkit-scrollbar { height: 6px; }
-
-.state-tabs::-webkit-scrollbar-track { background: #1a1a1a; }
-.state-tabs::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-
-.state-button {
-  flex: 0 0 auto;
-  background: #191919;
-  border: 1px solid #333;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.state-button.active,
-.state-button:hover { background: #222; }
+.state-tabs { display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; gap:6px; padding:5px 0; margin-bottom:15px; }
+.state-tabs::-webkit-scrollbar { height:6px; }
+.state-tabs::-webkit-scrollbar-track { background:#1a1a1a; }
+.state-tabs::-webkit-scrollbar-thumb { background:#333; border-radius:3px; }
+.state-button { flex:0 0 auto; background:#191919; border:1px solid #333; color:#fff; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
+.state-button.active, .state-button:hover { background:#222; }
 
 /* ================= Doc Cards ================= */
-.doc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 15px;
-  padding: 10px;
-}
+.doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; padding:10px; }
+.doc-card { background:#1e1e1e; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
+.doc-card:hover { transform:scale(1.02); background:#222; box-shadow:0 0 10px rgba(0,191,255,0.3); }
+.doc-card h3 { margin:0 0 8px; }
+.doc-card p { margin:0 0 12px; color:#ccc; }
 
-.doc-card {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-sizing: border-box;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
-
-.doc-card:hover { transform: scale(1.02); background-color: #222; box-shadow: 0 0 10px rgba(0, 191, 255, 0.3); }
+/* ================= More Button ================= */
+.more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#00bfff; color:#121212; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s; }
+.more-btn:hover { background:#00ffff; transform:scale(1.05); }
 
 /* ================= Footer ================= */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #0b0b0b;
-  color: #e5e5e5;
-  flex-wrap: wrap;
-  border-top: 1px solid #1f1f1f;
-}
-
-.footer-text { font-size: 14px; }
-
-.footer-buttons {
-  display: flex;
-  gap: 18px;
-}
-
-.footer-buttons a {
-  color: #00b3b3;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-  padding: 6px 0;
-}
-
-.footer-buttons a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff;
-}
+footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#0b0b0b; color:#e5e5e5; flex-wrap:wrap; border-top:1px solid #1f1f1f; }
+.footer-text { font-size:14px; }
+.footer-buttons { display:flex; gap:18px; }
+.footer-buttons a { color:#00b3b3; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
+.footer-buttons a:hover { color:#00ffff; text-shadow:0 0 8px #00ffff; }
 
 /* ================= Media Queries ================= */
-@media (max-width: 1024px) {
-  .hero h1 { font-size: 2.5rem; }
-  .hero p { font-size: 1.1rem; }
-}
-
-@media (max-width: 768px) {
-  nav { flex-direction: column; align-items: center; gap: 0.5rem; padding: 1rem; }
-  nav ul { flex-direction: column; width: 100%; padding: 0; }
-  nav li { width: 100%; text-align: center; padding: 0.7rem 0; }
-  .hero h1 { font-size: 2rem; }
-  .hero p { font-size: 1rem; }
-  .search-container input { width: 80%; }
-}
-
-@media (max-width: 480px) {
-  nav ul { display: none; }
-  nav.active ul { display: flex; flex-direction: column; width: 100%; }
-  .hamburger { display: block; }
-  .hero { padding: 2rem 1rem; }
-  .hero h1 { font-size: 1.6rem; }
-  .hero p { font-size: 0.9rem; }
-  .search-container input { width: 95%; }
-  .doc-grid { padding: 5px; }
-}
+@media (max-width:768px){ nav{flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;} nav ul{flex-direction:column;width:100%;padding:0;} nav li{width:100%;text-align:center;padding:0.7rem 0;} .hero h1{font-size:2rem;} .hero p{font-size:1rem;} .search-container input{width:80%;} }
+@media (max-width:480px){ nav ul{display:none;} nav.active ul{display:flex;flex-direction:column;width:100%;} .hamburger{display:block;} .hero{padding:2rem 1rem;} .hero h1{font-size:1.6rem;} .hero p{font-size:0.9rem;} .search-container input{width:95%;} .doc-grid{padding:5px;} }
 </style>
 </head>
 <body>
 
 <header>
-  <nav>
-    <div class="logo">Crime Network</div>
-    <div class="hamburger">&#9776;</div>
-    <ul>
-      <li><a href="index">Home</a></li>
-      <li><a href="documentation" class="active">Documentation</a></li>
-      <li><a href="staff">Staff</a></li>
-      <li><a href="about">About</a></li>
-    </ul>
-  </nav>
-  <div class="hero">
-    <h1>Investigations & Documentation Hub</h1>
-    <p>Insights into investigations, cyber threats, and real-world crime.</p>
-  </div>
+<nav>
+<div class="logo">Crime Network</div>
+<div class="hamburger">&#9776;</div>
+<ul>
+<li><a href="index">Home</a></li>
+<li><a href="documentation" class="active">Documentation</a></li>
+<li><a href="staff">Staff</a></li>
+<li><a href="about">About</a></li>
+</ul>
+</nav>
+<div class="hero">
+<h1>Investigations & Documentation Hub</h1>
+<p>Insights into investigations, cyber threats, and real-world crime.</p>
+</div>
 </header>
 
 <main>
-  <div class="tabs">
-    <button class="tab-button active" onclick="openTab(event,'gang-docs')">Gang Documentation</button>
-    <button class="tab-button" onclick="openTab(event,'irl-crime')">IRL Crime Documentation</button>
-    <button class="tab-button" onclick="openTab(event,'security')">Security Breaches</button>
-    <button class="tab-button" onclick="openTab(event,'cyber')">Cyber Crimes</button>
-  </div>
+<div class="tabs">
+<button class="tab-button active" onclick="openTab(event,'gang-docs')">Gang Documentation</button>
+<button class="tab-button" onclick="openTab(event,'irl-crime')">IRL Crime Documentation</button>
+<button class="tab-button" onclick="openTab(event,'security')">Security Breaches</button>
+<button class="tab-button" onclick="openTab(event,'cyber')">Cyber Crimes</button>
+</div>
 
-  <!-- ================= Gang Documentation ================= -->
-  <div id="gang-docs" class="tab-content" style="display:block; opacity:1;">
-    <div class="search-container">
-      <input type="text" placeholder="Search gangs..." onkeyup="searchDocs(this,'gang-docs')">
-    </div>
-    <div class="state-tabs">
-      <button class="state-button active" onclick="openState('gang-docs','ohio')">Ohio</button>
-      <button class="state-button" onclick="openState('gang-docs','california')">California</button>
-      <button class="state-button" onclick="openState('gang-docs','illinois')">Illinois</button>
-      <!-- Add more states as needed -->
-    </div>
+<!-- ================= Gang Documentation ================= -->
+<div id="gang-docs" class="tab-content" style="display:block; opacity:1;">
+<div class="search-container">
+<input type="text" placeholder="Search gangs..." onkeyup="searchDocs(this,'gang-docs')">
+</div>
+<div class="state-tabs">
+<button class="state-button active" onclick="openState('gang-docs','ohio')">Ohio</button>
+<button class="state-button" onclick="openState('gang-docs','california')">California</button>
+<button class="state-button" onclick="openState('gang-docs','illinois')">Illinois</button>
+</div>
 
-    <div id="gang-docs-ohio" class="state-content" style="display:block;">
-      <div class="doc-grid">
-        <div class="doc-card">BL-800 (Columbus, OH)</div>
-        <div class="doc-card">Eastside Riders (Cleveland, OH)</div>
-      </div>
-    </div>
+<div id="gang-docs-ohio" class="state-content" style="display:block;">
+<div class="doc-grid">
+<div class="doc-card">
+<h3>BL-800 (Columbus, OH)</h3>
+<p>BL-800 is a notorious gang operating in Columbus, involved in multiple criminal activities.</p>
+<a href="docs/bl800/index" class="more-btn">Click me for more</a>
+</div>
+<div class="doc-card">
+<h3>Eastside Riders (Cleveland, OH)</h3>
+<p>Eastside Riders is known for its influence across Cleveland neighborhoods and its street activities.</p>
+<a href="docs/eastriders/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
 
-    <div id="gang-docs-california" class="state-content" style="display:none;">
-      <div class="doc-grid">
-        <div class="doc-card">Venice Kings (Los Angeles, CA)</div>
-        <div class="doc-card">Southside 213 (San Diego, CA)</div>
-      </div>
-    </div>
+<div id="gang-docs-california" class="state-content" style="display:none;">
+<div class="doc-grid">
+<div class="doc-card">
+<h3>Venice Kings (Los Angeles, CA)</h3>
+<p>Venice Kings operate in L.A. and are involved in local gang conflicts and organized crime.</p>
+<a href="docs/venicekings/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
 
-    <div id="gang-docs-illinois" class="state-content" style="display:none;">
-      <div class="doc-grid">
-        <div class="doc-card">Northside Crew (Chicago, IL)</div>
-      </div>
-    </div>
-  </div>
+<div id="gang-docs-illinois" class="state-content" style="display:none;">
+<div class="doc-grid">
+<div class="doc-card">
+<h3>Northside Crew (Chicago, IL)</h3>
+<p>Northside Crew is a Chicago-based gang active in street and organized criminal activity.</p>
+<a href="docs/northside/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- ================= IRL Crime Documentation ================= -->
-  <div id="irl-crime" class="tab-content">
-    <div class="search-container">
-      <input type="text" placeholder="Search IRL crimes..." onkeyup="searchDocs(this,'irl-crime')">
-    </div>
-    <div class="state-tabs">
-      <button class="state-button active" onclick="openState('irl-crime','ohio')">Ohio</button>
-      <button class="state-button" onclick="openState('irl-crime','california')">California</button>
-      <button class="state-button" onclick="openState('irl-crime','texas')">Texas</button>
-    </div>
+<!-- ================= IRL Crime Documentation ================= -->
+<div id="irl-crime" class="tab-content">
+<div class="search-container">
+<input type="text" placeholder="Search IRL crimes..." onkeyup="searchDocs(this,'irl-crime')">
+</div>
+<div class="state-tabs">
+<button class="state-button active" onclick="openState('irl-crime','ohio')">Ohio</button>
+<button class="state-button" onclick="openState('irl-crime','california')">California</button>
+</div>
 
-    <div id="irl-crime-ohio" class="state-content" style="display:block;">
-      <div class="doc-grid">
-        <div class="doc-card">Bank Heist (Cincinnati, OH)</div>
-        <div class="doc-card">Drug Bust (Cleveland, OH)</div>
-      </div>
-    </div>
+<div id="irl-crime-ohio" class="state-content" style="display:block;">
+<div class="doc-grid">
+<div class="doc-card">
+<h3>Bank Heist (Cincinnati, OH)</h3>
+<p>A major bank heist in Cincinnati resulting in multiple arrests.</p>
+<a href="docs/bankheist/index" class="more-btn">Click me for more</a>
+</div>
+<div class="doc-card">
+<h3>Drug Bust (Cleveland, OH)</h3>
+<p>Police seized a large quantity of illegal drugs in Cleveland operation.</p>
+<a href="docs/drugbust/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
 
-    <div id="irl-crime-california" class="state-content" style="display:none;">
-      <div class="doc-grid">
-        <div class="doc-card">Robbery (Los Angeles, CA)</div>
-      </div>
-    </div>
-  </div>
+<div id="irl-crime-california" class="state-content" style="display:none;">
+<div class="doc-grid">
+<div class="doc-card">
+<h3>Cyber Fraud Case (LA, CA)</h3>
+<p>A sophisticated cyber fraud operation targeting local businesses.</p>
+<a href="docs/cyberfraud/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
+</div>
 
-  <!-- ================= Security Breaches ================= -->
-  <div id="security" class="tab-content">
-    <div class="search-container">
-      <input type="text" placeholder="Search breaches..." onkeyup="searchDocs(this,'security')">
-    </div>
-    <div class="doc-grid">
-      <div class="doc-card">Data Leak - April 2025</div>
-      <div class="doc-card">Server Breach - New York</div>
-    </div>
-  </div>
+<!-- ================= Security Breaches ================= -->
+<div id="security" class="tab-content">
+<div class="search-container">
+<input type="text" placeholder="Search security breaches..." onkeyup="searchDocs(this,'security')">
+</div>
+<div class="doc-grid">
+<div class="doc-card">
+<h3>Corporate Data Leak</h3>
+<p>Major company exposed sensitive customer information.</p>
+<a href="docs/corpdata/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
 
-  <!-- ================= Cyber Crimes ================= -->
-  <div id="cyber" class="tab-content">
-    <div class="search-container">
-      <input type="text" placeholder="Search cyber crimes..." onkeyup="searchDocs(this,'cyber')">
-    </div>
-    <div class="doc-grid">
-      <div class="doc-card">Phishing Operation - 2024</div>
-      <div class="doc-card">DDoS Attack - Texas</div>
-    </div>
-  </div>
+<!-- ================= Cyber Crimes ================= -->
+<div id="cyber" class="tab-content">
+<div class="search-container">
+<input type="text" placeholder="Search cyber crimes..." onkeyup="searchDocs(this,'cyber')">
+</div>
+<div class="doc-grid">
+<div class="doc-card">
+<h3>Ransomware Attack</h3>
+<p>Widespread ransomware targeting financial institutions.</p>
+<a href="docs/ransomware/index" class="more-btn">Click me for more</a>
+</div>
+</div>
+</div>
+
 </main>
 
 <footer>
-  <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
-  <div class="footer-buttons">
-    <a href="privacy">Privacy Policy</a>
-    <a href="tos">Terms of Service</a>
-    <a href="about">About</a>
-  </div>
+<div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+<div class="footer-buttons">
+<a href="privacy">Privacy Policy</a>
+<a href="tos">Terms of Service</a>
+<a href="about">About</a>
+</div>
 </footer>
 
-<!-- ================= JS ================= -->
 <script>
-// Tab Switching
-function openTab(evt, tabId) {
-  const tabs = document.querySelectorAll(".tab-button");
-  const contents = document.querySelectorAll(".tab-content");
-  tabs.forEach(btn => btn.classList.remove("active"));
+// Tabs
+function openTab(evt, tabId){
+  document.querySelectorAll(".tab-button").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".tab-content").forEach(c=>{c.style.display="none"; c.style.opacity="0";});
   evt.currentTarget.classList.add("active");
-  contents.forEach(c => { c.style.display="none"; c.style.opacity="0"; });
-  const target = document.getElementById(tabId);
-  if(target){ target.style.display="block"; setTimeout(()=>target.style.opacity="1",20); }
-  const stateButtons = target.querySelectorAll(".state-button");
-  const stateContents = target.querySelectorAll(".state-content");
-  stateButtons.forEach((b,i)=>{ b.classList.remove("active"); if(i===0) b.classList.add("active"); });
-  stateContents.forEach((s,i)=>{ s.style.display=(i===0)?"block":"none"; });
+  const t=document.getElementById(tabId);
+  t.style.display="block"; setTimeout(()=>{t.style.opacity="1";},20);
 }
 
-// State Switching
-function openState(mainTab,stateName){
-  const tab = document.getElementById(mainTab);
-  if(!tab) return;
-  const states = tab.querySelectorAll(".state-content");
-  states.forEach(s => s.style.display="none");
-  const active = document.getElementById(`${mainTab}-${stateName}`);
-  if(active) active.style.display="block";
-  const buttons = tab.querySelectorAll(".state-button");
-  buttons.forEach(b => b.classList.remove("active"));
+// State Tabs
+function openState(tabId,stateId){
+  const tab=document.getElementById(tabId);
+  tab.querySelectorAll(".state-content").forEach(c=>c.style.display="none");
+  tab.querySelectorAll(".state-button").forEach(b=>b.classList.remove("active"));
+  document.getElementById(tabId+"-"+stateId).style.display="block";
   event.currentTarget.classList.add("active");
 }
 
-// Live Search
+// Search with auto-scroll
 function searchDocs(input,tabId){
-  const filter = input.value.toLowerCase();
-  const tab = document.getElementById(tabId);
+  const filter=input.value.toLowerCase();
+  const tab=document.getElementById(tabId);
   if(!tab) return;
-  const activeState = tab.querySelector(".state-content[style*='display: block']");
-  const searchScope = activeState || tab;
-  const cards = searchScope.querySelectorAll(".doc-card");
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(filter) ? "block" : "none";
+  const activeState=tab.querySelector(".state-content[style*='display: block']");
+  const searchScope=activeState||tab;
+  const cards=searchScope.querySelectorAll(".doc-card");
+  let firstMatch=null;
+  cards.forEach(card=>{
+    const text=card.innerText.toLowerCase();
+    const match=text.includes(filter);
+    card.style.display=match?"block":"none";
+    if(match&&!firstMatch) firstMatch=card;
   });
+  if(firstMatch) firstMatch.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-// Hamburger toggle
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
-hamburger.addEventListener('click',()=>{ nav.classList.toggle('active'); });
+// Hamburger
+document.querySelector('.hamburger').addEventListener('click',()=>{document.querySelector('nav').classList.toggle('active');});
 </script>
 
 </body>
