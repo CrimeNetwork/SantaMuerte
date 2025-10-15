@@ -4,67 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Documentation | Crime Network</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
 <style>
-/* ================= General ================= */
+/* ================= General & Existing CSS ================= */
 body { margin:0; font-family: Arial,sans-serif; background:#121212; color:#f1f1f1; }
 a { color:#00bfff; text-decoration:none; }
-
-/* ================= Header ================= */
 header { background:#1e1e1e; padding-bottom:2rem; }
-
-/* ================= Navigation ================= */
 nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
 nav ul { list-style:none; display:flex; gap:1rem; }
 nav li { padding:0.5rem 1rem; }
 nav li:hover { background:#333; border-radius:5px; }
 .hamburger { display:none; font-size:1.5rem; color:#00bfff; cursor:pointer; }
-
-/* ================= Hero ================= */
 .hero { text-align:center; padding:4rem 2%; }
 .hero h1 { font-size:clamp(1.6rem,5vw,3rem); }
 .hero p { font-size:clamp(0.9rem,2.5vw,1.2rem); max-width:800px; margin:0 auto; }
-
-/* ================= Tabs ================= */
 .tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:2rem 0; }
 .tab-button { background:#1e1e1e; color:#f1f1f1; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s; }
 .tab-button.active { background:#00bfff; color:#121212; }
 .tab-button:hover { background:#333; transform:scale(1.05); }
 .tab-content { max-width:1000px; margin:0 auto 2rem auto; display:none; opacity:0; transition:opacity 0.3s ease; }
 .tab-content.active { display:block; opacity:1; }
-
-/* ================= Search Box ================= */
 .search-container { text-align:center; margin-bottom:15px; }
 .search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #333; background:#1a1a1a; color:#fff; }
-
-/* ================= State Tabs ================= */
 .state-tabs { display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; gap:6px; padding:5px 0; margin-bottom:15px; }
 .state-tabs::-webkit-scrollbar { height:6px; }
 .state-tabs::-webkit-scrollbar-track { background:#1a1a1a; }
 .state-tabs::-webkit-scrollbar-thumb { background:#333; border-radius:3px; }
 .state-button { flex:0 0 auto; background:#191919; border:1px solid #333; color:#fff; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
 .state-button.active, .state-button:hover { background:#222; }
-
-/* ================= Doc Cards ================= */
 .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; padding:10px; }
 .doc-card { background:#1e1e1e; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
 .doc-card:hover { transform:scale(1.02); background:#222; box-shadow:0 0 10px rgba(0,191,255,0.3); }
 .doc-card h3 { margin:0 0 8px; }
 .doc-card p { margin:0 0 12px; color:#ccc; }
-
-/* ================= More Button ================= */
 .more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#00bfff; color:#121212; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s; }
 .more-btn:hover { background:#00ffff; transform:scale(1.05); }
-
-/* ================= Footer ================= */
 footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#0b0b0b; color:#e5e5e5; flex-wrap:wrap; border-top:1px solid #1f1f1f; }
 .footer-text { font-size:14px; }
 .footer-buttons { display:flex; gap:18px; }
 .footer-buttons a { color:#00b3b3; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
 .footer-buttons a:hover { color:#00ffff; text-shadow:0 0 8px #00ffff; }
-
-/* ================= Media Queries ================= */
 @media (max-width:768px){ nav{flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;} nav ul{flex-direction:column;width:100%;padding:0;} nav li{width:100%;text-align:center;padding:0.7rem 0;} .hero h1{font-size:2rem;} .hero p{font-size:1rem;} .search-container input{width:80%;} }
 @media (max-width:480px){ nav ul{display:none;} nav.active ul{display:flex;flex-direction:column;width:100%;} .hamburger{display:block;} .hero{padding:2rem 1rem;} .hero h1{font-size:1.6rem;} .hero p{font-size:0.9rem;} .search-container input{width:95%;} .doc-grid{padding:5px;} }
 </style>
@@ -97,7 +77,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 
 <!-- ================= Gang Documentation ================= -->
-<div id="gang-docs" class="tab-content" style="display:block; opacity:1;">
+<div id="gang-docs" class="tab-content active">
 <div class="search-container">
 <input type="text" placeholder="Search gangs..." onkeyup="searchDocs(this,'gang-docs')">
 </div>
@@ -106,7 +86,6 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <button class="state-button" onclick="openState('gang-docs','california')">California</button>
 <button class="state-button" onclick="openState('gang-docs','illinois')">Illinois</button>
 </div>
-
 <div id="gang-docs-ohio" class="state-content" style="display:block;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -116,12 +95,11 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 <div class="doc-card">
 <h3>Eastside Riders (Cleveland, OH)</h3>
-<p>Eastside Riders is known for its influence across Cleveland neighborhoods and its street activities.</p>
+<p>Eastside Riders is known for its influence across Cleveland neighborhoods and street activity.</p>
 <a href="docs/eastriders/index" class="more-btn">Click me for more</a>
 </div>
 </div>
 </div>
-
 <div id="gang-docs-california" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -131,7 +109,6 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 </div>
-
 <div id="gang-docs-illinois" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -152,7 +129,6 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <button class="state-button active" onclick="openState('irl-crime','ohio')">Ohio</button>
 <button class="state-button" onclick="openState('irl-crime','california')">California</button>
 </div>
-
 <div id="irl-crime-ohio" class="state-content" style="display:block;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -167,7 +143,6 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 </div>
-
 <div id="irl-crime-california" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -222,10 +197,11 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 // Tabs
 function openTab(evt, tabId){
   document.querySelectorAll(".tab-button").forEach(b=>b.classList.remove("active"));
-  document.querySelectorAll(".tab-content").forEach(c=>{c.style.display="none"; c.style.opacity="0";});
+  document.querySelectorAll(".tab-content").forEach(c=>{c.style.display="none"; c.style.opacity="0"; c.classList.remove("active");});
   evt.currentTarget.classList.add("active");
   const t=document.getElementById(tabId);
-  t.style.display="block"; setTimeout(()=>{t.style.opacity="1";},20);
+  t.style.display="block"; 
+  setTimeout(()=>{t.style.opacity="1"; t.classList.add("active");},20);
 }
 
 // State Tabs
