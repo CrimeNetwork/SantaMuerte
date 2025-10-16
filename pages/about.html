@@ -19,18 +19,18 @@
     section {
       margin-bottom: 60px;
       padding: 25px;
-      background-color: #111;
+      background-color: #0b0b0b; /* Dark background */
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 179, 179, 0.2);
+      box-shadow: 0 0 20px rgba(255, 0, 50, 0.2); /* Cherry red glow */
     }
 
     h1, h2, h3 {
-      color: #00b3b3;
+      color: #FF0033; /* Cherry red headings */
       margin-bottom: 15px;
     }
 
     .psa {
-      border-left: 5px solid #00b3b3;
+      border-left: 5px solid #FF0033;
       background-color: #0d0d0d;
       padding: 20px 25px;
     }
@@ -38,7 +38,7 @@
     .about-section p, .history-section p, .mission-section p {
       line-height: 1.7;
       margin-bottom: 15px;
-      color: #e5e5e5;
+      color: #ffffff; /* Keep all text white */
     }
 
     .history-section, .mission-section, .social-section {
@@ -49,6 +49,7 @@
       list-style: disc inside;
       margin-left: 15px;
       line-height: 1.6;
+      color: #ffffff;
     }
 
     .social-links {
@@ -62,34 +63,33 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      color: #00b3b3;
+      color: #FF0033;
       text-decoration: none;
       font-weight: bold;
       padding: 8px 15px;
       border-radius: 8px;
       background-color: #0b0b0b;
       transition: all 0.3s;
-      box-shadow: 0 0 5px rgba(0, 179, 179, 0.3);
+      box-shadow: 0 0 5px rgba(255, 0, 50, 0.3);
     }
 
     .social-links a:hover {
       color: #0b0b0b;
-      background-color: #00b3b3;
-      box-shadow: 0 0 15px #00b3b3;
+      background-color: #FF0033;
+      box-shadow: 0 0 15px #FF0033;
     }
 
     .social-links a i {
       font-size: 18px;
     }
-  </style>
-      <style>
+
     footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
       background-color: #0b0b0b; /* Dark footer */
-      color: #e5e5e5;
+      color: #ffffff;
       flex-wrap: wrap;
       border-top: 1px solid #1f1f1f;
     }
@@ -104,7 +104,7 @@
     }
 
     .footer-buttons a {
-      color: #00b3b3;
+      color: #FF0033;
       text-decoration: none;
       font-size: 14px;
       transition: 0.3s;
@@ -112,8 +112,8 @@
     }
 
     .footer-buttons a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 8px #00ffff;
+      color: #ffffff;
+      text-shadow: 0 0 8px #FF0033;
     }
 
     @media (max-width: 600px) {
@@ -132,7 +132,7 @@
   <header>
     <nav>
       <div class="logo">Crime Network</div>
-      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+      <div class="hamburger">&#9776;</div>
       <ul>
         <li><a href="index">Home</a></li>
         <li><a href="documentation">Documentation</a></li>
@@ -143,33 +143,28 @@
   </header>
 
   <main>
-    <!-- PSA Section -->
     <section class="psa">
       <h2>Public Service Announcements</h2>
       <p>
-Crime Network is back and better than ever! 
-        revamped and under brand new management, currently going through rebranding & repositioning 
+        Crime Network is back and better than ever! 
+        Revamped and under brand new management, currently going through rebranding & repositioning.
       </p>
     </section>
 
-    <!-- About Section -->
     <section class="about-section">
       <h1>About Crime Network</h1>
       <p>
-       Crime Network is a media and cybersecurity brand dedicated to investigating real-world and digital crimes — while protecting users from them through CrimeVPN.<br>
-        
-      We combine journalism, education, and privacy technology to help people understand the underworld and stay safe from it.<br>
-      We are the first hybrid true crime and cybersecurity platform, investigating criminal behavior both on the streets and online, while actively developing technology to protect you from it.<br><br>
-
+        Crime Network is a media and cybersecurity brand dedicated to investigating real-world and digital crimes — while protecting users from them through CrimeVPN.<br>
+        We combine journalism, education, and privacy technology to help people understand the underworld and stay safe from it.<br>
+        We are the first hybrid true crime and cybersecurity platform, investigating criminal behavior both on the streets and online, while actively developing technology to protect you from it.<br><br>
         From deep investigations to real privacy tools, we make the dark web and digital threats understandable — and beatable.<br>
         We analyze criminal behavior, expose online threats, and provide tools that help users stay protected in the real and digital world.
       </p>
 
-      <!-- History and Origins -->
       <div class="history-section">
         <h2>History & Origins</h2>
         <p>
-          Crime Network began as a small online project focused on Virtual private networks, Discord bots & selfbots, stress testing tools, VPS's and an assortment of multi-tools on Mar 30, 2022
+          Crime Network began as a small online project focused on Virtual private networks, Discord bots & selfbots, stress testing tools, VPS's and an assortment of multi-tools on Mar 30, 2022.
           It was founded by a group of independent cybersecurity researchers and aspiring programmers. Crime Network had gathered a small Discord following of about 300-400 members and an active community.
           Crime Network was disbanded around August 30, 2022, after the Discord server was terminated. Crime Network made a PSA on the website at the time to all of their VPN customers that it would be shutting down in 30 days.
           After the shutdown of Crime Network, also known as Crime Network, LLC at the time remained dormant and disbanded but still under the same ownership. 
@@ -180,12 +175,10 @@ Crime Network is back and better than ever!
           Crime Network is now managed and owned by a group of independent researchers, cybersecurity, and real-world crime journalists and analysts.<br><br>
           The platform’s mission has since changed from its roots and has become a platform for real-world and cybersecurity investigations. We combine journalism, education, and privacy technology to help people understand the underworld and stay safe from it. <br>
           The only thing kept from the original roots of Crime Network is its VPN (CrimeVPN) and its discord bots.
-          
         </p>
       </div>
     </section>
 
-    <!-- Mission and Values -->
     <section class="mission-section">
       <h2>Mission & Values</h2>
       <p>
@@ -193,13 +186,12 @@ Crime Network is back and better than ever!
       </p>
       <ul>
         <li><strong>Transparency:</strong> We are committed to clear and fact-based reporting. Every story we publish is grounded in verified information, <br>ensuring our audience receives accurate and trustworthy content. We strive to make complex topics accessible so that everyone can understand and engage with the truth.</li><br>
-        <li><strong>Security:</strong> Your privacy and protection are at the heart of everything we do. We employ the latest tools and practices to safeguard your data and keep you safe online. With Crime Network, you can explore, learn, and engage with confidence, knowing your information is always protected</li><br>
+        <li><strong>Security:</strong> Your privacy and protection are at the heart of everything we do. We employ the latest tools and practices to safeguard your data and keep you safe online. With Crime Network, you can explore, learn, and engage with confidence, knowing your information is always protected.</li><br>
         <li><strong>Education:</strong> Knowledge is the first line of defense against crime. We provide clear, fact-based resources and investigative insights to help you understand both real-world and digital threats. By empowering our audience with information, we give them the tools to stay safe and make informed decisions.</li><br>
-        <li><strong>Innovation:</strong> We merge cutting-edge technology with investigative expertise to stay ahead of evolving threats. From deep-dive analyses to advanced cybersecurity solutions, we are constantly pushing boundaries to uncover the truth and protect our users. At Crime Network, innovation drives both safety and discovery</li>
+        <li><strong>Innovation:</strong> We merge cutting-edge technology with investigative expertise to stay ahead of evolving threats. From deep-dive analyses to advanced cybersecurity solutions, we are constantly pushing boundaries to uncover the truth and protect our users. At Crime Network, innovation drives both safety and discovery.</li>
       </ul>
     </section>
 
-    <!-- Social Media -->
     <section class="social-section">
       <h2>Connect With Us</h2>
       <p>Stay up-to-date with the latest investigations, cybersecurity updates, and public reports:</p>
@@ -211,6 +203,7 @@ Crime Network is back and better than ever!
         <a href="#"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </section>
+
     <section class="social-section">
       <h2>! Disclaimer !</h2>
       <p>Crime Network stands against all forms of illegal activity, cybercrime, and violence. Our investigations, reports, and educational resources are meant for awareness, prevention, and protection — not for glorification or encouragement of criminal acts.</p>
@@ -227,13 +220,12 @@ Crime Network is back and better than ever!
   </footer>
 
   <script>
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
 
-hamburger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
-</script>
-  
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
