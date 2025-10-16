@@ -1,17 +1,21 @@
 /* ================= General ================= */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #0b0b0b;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-  flex: 1 0 auto; /* allows footer to stay at bottom */
+  flex: 1 0 auto; /* main grows as needed */
 }
 
 /* ================= Glow Animation ================= */
@@ -92,12 +96,20 @@ nav ul li a:hover::after {
 
 /* ================= Responsive Menu ================= */
 @keyframes slideDown {
-  0% { opacity: 0; transform: translateY(-10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
-  .hamburger { display: block; }
+  .hamburger {
+    display: block;
+  }
 
   nav ul {
     display: none;
@@ -107,6 +119,7 @@ nav ul li a:hover::after {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid #1f1f1f;
+    animation: none;
   }
 
   nav ul.active {
@@ -114,14 +127,16 @@ nav ul li a:hover::after {
     animation: slideDown 0.3s ease forwards;
   }
 
-  nav ul li { padding: 10px 0; }
+  nav ul li {
+    padding: 10px 0;
+  }
 }
 
 /* ================= Hero ================= */
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background-color: #111; /* dark grey below black top */
+  background: linear-gradient(to bottom, #000 0%, #1a1a1a 100%);
 }
 
 .hero h1 {
@@ -147,7 +162,7 @@ nav ul li a:hover::after {
   justify-content: center;
   gap: 40px;
   padding: 60px 20px;
-  background-color: #1a1a1a; /* slightly lighter dark grey */
+  background-color: #1a1a1a; /* dark grey below hero */
 }
 
 .feature {
@@ -178,32 +193,27 @@ nav ul li a:hover::after {
 
 /* ================= Footer ================= */
 footer {
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 20px 30px;
-  background-color: #0b0b0b;
+  padding: 20px 40px;
+  background-color: #000; /* black footer top */
   color: #fff;
   border-top: 1px solid #1f1f1f;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .footer-text {
   font-size: 14px;
   flex: 1 1 auto;
   text-align: left;
-  margin-bottom: 10px;
 }
 
 .footer-buttons {
   display: flex;
-  gap: 18px;
   justify-content: flex-end;
-  flex: 1 1 auto;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -218,19 +228,57 @@ footer {
   text-shadow: 0 0 8px #D2042D;
 }
 
-/* Responsive Footer on smaller screens */
-@media (max-width: 600px) {
-  footer {
+/* ================= Staff Cards ================= */
+.staff-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.staff-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 250px;
+  padding-bottom: 1rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.staff-card .banner {
+  width: 100%;
+  height: 0;
+  padding-top: 35%;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.staff-card .pfp {
+  width: 80%;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: -50px;
+  border: 3px solid #D2042D;
+}
+
+/* ================= Media Queries ================= */
+@media (max-width: 768px) {
+  nav {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
 
-  .footer-text {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .footer-buttons {
-    justify-content: center;
+  nav ul {
+    width: 100%;
   }
 }
