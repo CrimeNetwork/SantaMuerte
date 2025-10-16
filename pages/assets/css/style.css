@@ -140,7 +140,12 @@ nav ul li a:hover::after {
   font-size: 3rem;
   margin-bottom: 20px;
   animation: glowPulse 2s ease-in-out infinite;
-  border: none;
+  border: none !important;
+  outline: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  display: inline-block;
+  text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D;
 }
 
 .hero p {
@@ -222,10 +227,12 @@ footer {
   transition: 0.3s;
 }
 
-.footer-buttons a:hover {
+.footer-buttons a:hover,
+.footer-buttons a:active {
   text-shadow: 0 0 8px #D2042D;
 }
 
+/* Footer alignment for larger screens */
 @media (min-width: 600px) {
   footer {
     flex-direction: row;
