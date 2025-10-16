@@ -7,116 +7,359 @@
 <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
 <style>
-/* ================= General ================= */
-body { margin:0; font-family: Arial,sans-serif; background:#0b0b0b; color:#fff; }
-a { color:#fff; text-decoration:none; }
+/* ========== General ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
 
-header { background:#0b0b0b; padding-bottom:2rem; }
-nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; flex-wrap:wrap; }
-.logo { color:#FF0033; font-weight:bold; font-size:1.6rem; text-shadow:0 0 8px rgba(255,0,50,0.5); transition: text-shadow 0.3s ease-in-out; }
-.logo:hover { text-shadow:0 0 12px rgba(255,0,50,0.8), 0 0 20px rgba(255,0,50,0.5); }
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ========== Header & Nav ========== */
+header {
+  background: #0b0b0b;
+  padding-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: #D2042D;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.logo:hover {
+  text-shadow: 0 0 12px rgba(210, 4, 45, 0.8), 0 0 20px rgba(210, 4, 45, 0.6);
+}
 
 /* Hamburger */
-.hamburger { display:none; font-size:1.8rem; color:#FF0033; cursor:pointer; }
-.hamburger:hover { text-shadow:0 0 12px rgba(255,0,50,0.8); transform:scale(1.1); transition:0.3s; }
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #D2042D;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  text-shadow: 0 0 12px rgba(210, 4, 45, 0.8);
+  transform: scale(1.1);
+}
 
 /* Nav links */
-nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
-nav li { position:relative; }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  position: relative;
+}
+
 nav li a {
   position: relative;
   display: inline-block;
-  padding:0.5rem 1rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
   transition: color 0.3s;
-  color:#fff;
 }
-nav li a:hover { color:#FF0033; text-shadow:0 0 8px rgba(255,0,50,0.5); }
+
+nav li a:hover {
+  color: #D2042D;
+  text-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
+}
+
 nav li a::after {
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  height:2px;
-  width:0;
-  background:#FF0033;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #D2042D;
   transition: width 0.3s;
 }
+
 nav li a:hover::after,
-nav li a.active::after { width:100%; }
+nav li a.active::after {
+  width: 100%;
+}
 
 /* Hamburger Menu Mobile */
-@media(max-width:768px){ nav{flex-direction:column;align-items:center;gap:0.5rem;} nav ul{flex-direction:column;width:100%;} nav li{width:100%;text-align:center;} .hamburger{display:block;} nav.active ul{display:flex;} }
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+  nav.active ul {
+    display: flex;
+  }
+  nav li {
+    width: 100%;
+    text-align: center;
+  }
+  .hamburger {
+    display: block;
+  }
+}
 
-/* Hero */
-.hero { text-align:center; padding:4rem 2%; }
-.hero h1 { font-size:clamp(1.6rem,5vw,3rem); color:#FF0033; text-shadow:0 0 6px rgba(255,0,50,0.5); }
-.hero p { font-size:clamp(0.9rem,2.5vw,1.2rem); max-width:800px; margin:0 auto; }
+/* ========== Hero ========== */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
 
-/* Tabs */
-.tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:2rem 0; gap:6px; }
-.tab-button { background:#0b0b0b; color:#fff; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s, box-shadow 0.2s; position:relative; }
-.tab-button.active { background:#FF0033; color:#fff; box-shadow:0 0 8px rgba(255,0,50,0.5); }
-.tab-button:hover { background:#1a1a1a; transform:scale(1.05); box-shadow:0 0 8px rgba(255,0,50,0.5); }
-.tab-button::after { content:""; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FF0033; transition:width 0.3s; }
-.tab-button:hover::after, .tab-button.active::after { width:100%; }
+.hero h1 {
+  color: #D2042D;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: glowPulse 2s ease-in-out infinite;
+}
 
-/* Tab content */
-.tab-content { max-width:1000px; margin:0 auto 2rem auto; display:none; opacity:0; transition:opacity 0.3s ease; }
-.tab-content.active { display:block; opacity:1; }
+.hero p {
+  color: #fff;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
 
-/* State tabs */
-.state-tabs { display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; gap:6px; padding:5px 0; margin-bottom:15px; }
-.state-tabs::-webkit-scrollbar { height:6px; }
-.state-tabs::-webkit-scrollbar-track { background:#0b0b0b; }
-.state-tabs::-webkit-scrollbar-thumb { background:#333; border-radius:3px; }
-.state-button { flex:0 0 auto; background:#111; border:1px solid #333; color:#fff; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
-.state-button.active, .state-button:hover { background:#222; border-color:#FF0033; box-shadow:0 0 6px rgba(255,28,44,0.4); }
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D; }
+  50% { text-shadow: 0 0 16px #D2042D, 0 0 32px #D2042D; }
+  100% { text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D; }
+}
 
-/* Search */
-.search-container { text-align:center; margin-bottom:15px; }
-.search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #333; background:#0b0b0b; color:#fff; }
+/* ========== Tabs ========== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  gap: 6px;
+}
 
-/* Doc cards */
-.doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; padding:10px; }
-.doc-card { background:#0b0b0b; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition:transform 0.2s, box-shadow 0.2s, background 0.2s; color:#fff; }
-.doc-card:hover { transform:scale(1.02); background:#111; box-shadow:0 0 10px rgba(255,28,44,0.4); }
-.doc-card h3 { margin:0 0 8px; color:#FF0033; text-shadow:0 0 4px rgba(255,28,44,0.4); }
-.doc-card p { margin:0 0 12px; color:#ccc; }
-.more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#FF0033; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s, box-shadow 0.2s; }
-.more-btn:hover { background:#fff; color:#FF0033; transform:scale(1.05); box-shadow:0 0 8px rgba(255,28,44,0.5); }
+.tab-button {
+  background: #0b0b0b;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
 
-/* Footer */
-footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#0b0b0b; color:#fff; flex-wrap:wrap; border-top:1px solid #111; }
-.footer-text { font-size:14px; }
-.footer-buttons { display:flex; gap:18px; }
-.footer-buttons a { color:#FF0033; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
-.footer-buttons a:hover { color:#fff; text-shadow:0 0 6px rgba(255,28,44,0.5); }
+.tab-button.active {
+  background: #D2042D;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
+}
 
-/* Responsive */
-@media(max-width:768px){ .hero h1{font-size:2rem;} .hero p{font-size:1rem;} .search-container input{width:80%;} }
-@media(max-width:480px){ nav ul{display:none;} nav.active ul{display:flex; flex-direction:column; width:100%;} .doc-grid{padding:5px;} .search-container input{width:95%;} }
+.tab-button:hover {
+  background: #1a1a1a;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
+}
+
+.tab-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #D2042D;
+  transition: width 0.3s;
+}
+
+.tab-button:hover::after,
+.tab-button.active::after {
+  width: 100%;
+}
+
+/* ========== Tab Content ========== */
+.tab-content {
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ========== State Tabs ========== */
+.state-tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 6px;
+  padding: 5px 0;
+  margin-bottom: 15px;
+}
+
+.state-button {
+  flex: 0 0 auto;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.state-button.active,
+.state-button:hover {
+  background: #222;
+  border-color: #D2042D;
+  box-shadow: 0 0 6px rgba(210, 4, 45, 0.4);
+}
+
+/* ========== Search ========== */
+.search-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.search-container input {
+  padding: 8px 12px;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+/* ========== Documentation Cards ========== */
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.doc-card {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: #fff;
+}
+
+.doc-card:hover {
+  transform: scale(1.02);
+  background: #111;
+  box-shadow: 0 0 10px rgba(210, 4, 45, 0.4);
+}
+
+.doc-card h3 {
+  color: #D2042D;
+  margin-bottom: 8px;
+  text-shadow: 0 0 4px rgba(210, 4, 45, 0.5);
+}
+
+.doc-card p {
+  color: #ccc;
+}
+
+.more-btn {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 6px 12px;
+  background: #D2042D;
+  color: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.more-btn:hover {
+  background: #fff;
+  color: #D2042D;
+  box-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
+}
+
+/* ========== Footer ========== */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #0b0b0b;
+  color: #fff;
+  border-top: 1px solid #1f1f1f;
+  flex-wrap: wrap;
+}
+
+.footer-buttons a {
+  color: #D2042D;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  padding: 6px 0;
+}
+
+.footer-buttons a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #D2042D;
+}
+
+@media (max-width: 600px) {
+  footer { flex-direction: column; text-align: center; }
+  .footer-buttons { margin-top: 10px; }
+}
 </style>
 </head>
 <body>
 
 <header>
-<nav>
-<div class="logo">Crime Network</div>
-<div class="hamburger">&#9776;</div>
-<ul>
-<li><a href="index">Home</a></li>
-<li><a href="documentation">Documentation</a></li>
-<li><a href="staff">Staff</a></li>
-<li><a href="about">About</a></li>
-</ul>
-</nav>
+  <nav>
+    <div class="logo">Crime Network</div>
+    <div class="hamburger">&#9776;</div>
+    <ul>
+      <li><a href="index">Home</a></li>
+      <li><a href="documentation" class="active">Documentation</a></li>
+      <li><a href="staff">Staff</a></li>
+      <li><a href="about">About</a></li>
+    </ul>
+  </nav>
 
-<div class="hero">
-<h1>Investigations & Documentation Hub</h1>
-<p>Insights into investigations, cyber threats, and real-world crime.</p>
-</div>
+  <div class="hero">
+    <h1>Investigations & Documentation Hub</h1>
+    <p>Insights into investigations, cyber threats, and real-world crime.</p>
+  </div>
 </header>
 
+<!-- Keep your main content here exactly as before -->
 <main>
 <div class="tabs">
 <button class="tab-button active" onclick="openTab(event,'gang-docs')">Gang Documentation</button>
@@ -240,58 +483,23 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 </div>
-
 </main>
 
 <footer>
-<div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
-<div class="footer-buttons">
-<a href="privacy">Privacy Policy</a>
-<a href="tos">Terms of Service</a>
-<a href="about">About</a>
-</div>
+  <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+  <div class="footer-buttons">
+    <a href="privacy">Privacy Policy</a>
+    <a href="tos">Terms of Service</a>
+    <a href="about">About</a>
+  </div>
 </footer>
 
 <script>
-// Tabs
-function openTab(evt, tabId){
-  document.querySelectorAll(".tab-button").forEach(b=>b.classList.remove("active"));
-  document.querySelectorAll(".tab-content").forEach(c=>{c.style.display="none"; c.style.opacity="0"; c.classList.remove("active");});
-  evt.currentTarget.classList.add("active");
-  const t=document.getElementById(tabId);
-  t.style.display="block"; 
-  setTimeout(()=>{t.style.opacity="1"; t.classList.add("active");},20);
-}
-
-// State Tabs
-function openState(evt, tabId,stateId){
-  const tab=document.getElementById(tabId);
-  tab.querySelectorAll(".state-content").forEach(c=>c.style.display="none");
-  tab.querySelectorAll(".state-button").forEach(b=>b.classList.remove("active"));
-  document.getElementById(tabId+"-"+stateId).style.display="block";
-  evt.currentTarget.classList.add("active");
-}
-
-// Search with auto-scroll
-function searchDocs(input,tabId){
-  const filter=input.value.toLowerCase();
-  const tab=document.getElementById(tabId);
-  if(!tab) return;
-  const activeState=tab.querySelector(".state-content[style*='display: block']");
-  const searchScope=activeState||tab;
-  const cards=searchScope.querySelectorAll(".doc-card");
-  let firstMatch=null;
-  cards.forEach(card=>{
-    const text=card.innerText.toLowerCase();
-    const match=text.includes(filter);
-    card.style.display=match?"block":"none";
-    if(match&&!firstMatch) firstMatch=card;
-  });
-  if(firstMatch) firstMatch.scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-// Hamburger
-document.querySelector('.hamburger').addEventListener('click',()=>{document.querySelector('nav').classList.toggle('active');});
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
 </script>
 
 </body>
