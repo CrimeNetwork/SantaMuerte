@@ -24,9 +24,16 @@
       box-shadow: 0 0 20px rgba(255, 0, 50, 0.2); /* Cherry red glow */
     }
 
+    /* Subtle glow for all headings */
     h1, h2, h3 {
       color: #FF0033; /* Cherry red headings */
       margin-bottom: 15px;
+      text-shadow: 0 0 6px rgba(255, 0, 50, 0.5); /* Subtle cherry red glow */
+    }
+
+    /* Stronger glow for specific headings */
+    .psa h2, .social-section h2:last-of-type {
+      text-shadow: 0 0 12px rgba(255, 0, 50, 0.8); /* Stronger cherry red glow */
     }
 
     .psa {
