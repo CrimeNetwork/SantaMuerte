@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlaceHolder | Crime Network</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon.ico">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* Main padding */
+    main {
+      padding: 40px 10%;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 25px;
+      background-color: #0b0b0b;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 0, 50, 0.2);
+    }
+
+    /* Headings with subtle glow */
+    h1, h2, h3 {
+      color: #FF0033;
+      margin-bottom: 15px;
+      text-shadow: 0 0 6px rgba(255, 0, 50, 0.5);
+    }
+
+    .psa h2, .social-section h2:last-of-type {
+      text-shadow: 0 0 12px rgba(255, 0, 50, 0.8);
+    }
+
+    /* PSA section */
+    .psa {
+      border-left: 5px solid #FF0033;
+      background-color: #0d0d0d;
+      padding: 20px 25px;
+    }
+
+    /* Paragraphs */
+    .about-section p, .history-section p, .mission-section p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .history-section, .mission-section, .social-section {
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: disc inside;
+      margin-left: 15px;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    /* Social links */
+    .social-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #FF0033;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background-color: #0b0b0b;
+      transition: all 0.3s;
+      box-shadow: 0 0 5px rgba(255, 0, 50, 0.3);
+    }
+
+    .social-links a:hover {
+      color: #0b0b0b;
+      background-color: #FF0033;
+      box-shadow: 0 0 15px #FF0033;
+    }
+
+    .social-links a i {
+      font-size: 18px;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b0b0b;
+      color: #ffffff;
+      flex-wrap: wrap;
+      border-top: 1px solid #1f1f1f;
+    }
+
+    .footer-text {
+      font-size: 14px;
+    }
+
+    .footer-buttons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-buttons a {
+      color: #FF0033;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+      padding: 6px 0;
+    }
+
+    .footer-buttons a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px #FF0033;
+    }
+
+    /* ========== Navigation ========== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b0b0b;
+    }
+
+    nav .logo {
+      color: #FF0033;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-shadow: 0 0 6px rgba(255,0,50,0.5);
+    }
+
+    .hamburger {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #FF0033;
+      display: none;
+    }
+
+    .hamburger:hover {
+      text-shadow: 0 0 10px #FF0033;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FF0033;
+      text-shadow: 0 0 8px #FF0033;
+    }
+
+    nav ul li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #FF0033;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0b0b0b; /* Match nav background */
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #1f1f1f;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+        padding: 12px 0;
+        background-color: #0b0b0b; /* Remove gray patches */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Crime Network</div>
+      <div class="hamburger">&#9776;</div>
+      <ul>
+        <li><a href="/CrimeNetwork/pages/index">Home</a></li>
+        <li><a href="/CrimeNetwork/pages/documentation">Documentation</a></li>
+        <li><a href="/CrimeNetwork/pages/staff">Staff</a></li>
+        <li><a href="/CrimeNetwork/pages/about" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="psa">
+      <h2>Public Service Announcements</h2>
+      <p>
+        Crime Network is back and better than ever! 
+        Revamped and under brand new management, currently going through rebranding & repositioning.
+      </p>
+    </section>
+
+    <section class="about-section">
+      <h2>Gang Name PlaceHolder</h2>
+<h3> Other gang name(s) </h3>
+<p class="subtitle">Category: Ohio Criminal Gangs • Date: 10/14/2025</p>
+<img src="../../assets/gangs/ohio/1600banner.png" alt="Banner" class="story-banner">
+<h2>Overview</h2>
+      <p>
+        PlaceHolder
+      </p>
+<h2>Background</h2>
+<p>
+PlaceHolder
+</p>
+<p>
+PlaceHolder
+</p>
+<h2>Investigation / Details</h2>
+<p>
+PlaceHolder
+</p>
+      <p>
+        Known / Likely Opps of 1600EBK:
+      </p>
+      <ul>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
+      </ul>
+       <p>
+        Basic Informational Breakdown:
+      </p>
+      <ul>
+        <li>Founded: Placeholder</li>
+        <li>Primary Territory: Placeholder</li>
+        <li>Expansion: Placeholder.</li>
+        <li>Known Activities: Placeholder</li><br>
+        <li>Law Enforcement Attention: Placeholder</li>
+      </ul>
+
+
+      <div class="history-section">
+        <h2>>Media / Video</h2>
+         <div style="position:relative; width:100%; max-width:900px; margin:1rem auto; aspect-ratio:16/9; border-radius:8px; overflow:hidden;">
+        <video id="bl800-video" controls
+               style="width:100%; height:100%; object-fit:cover; background:#000; border-radius:8px;">
+          <source src="../../assets/gangs/ohio/1600.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div style="position:relative; width:100%; max-width:900px; margin:1rem auto; aspect-ratio:16/9; border-radius:8px; overflow:hidden;">
+        <video id="bl800-video" controls
+               style="width:100%; height:100%; object-fit:cover; background:#000; border-radius:8px;">
+          <source src="../../assets/gangs/ohio/bl800.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+   <a href="/CrimeNetwork/pages/documentation" class="back-btn">← Back to Documentation</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+    <div class="footer-buttons">
+      <a href="/CrimeNetwork/pages/privacy">Privacy Policy</a>
+      <a href="/CrimeNetwork/pages/tos">Terms of Service</a>
+      <a href="/CrimeNetwork/pages/about">About</a>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
