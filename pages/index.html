@@ -7,215 +7,13 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
-  <style>
-    body {
-      background-color: #0b0b0b;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    /* ===== Glow Animation ===== */
-    @keyframes glowPulse {
-      0% { box-shadow: 0 0 6px #D2042D, inset 0 0 3px #D2042D; }
-      50% { box-shadow: 0 0 14px #D2042D, inset 0 0 7px #D2042D; }
-      100% { box-shadow: 0 0 6px #D2042D, inset 0 0 3px #D2042D; }
-    }
-
-    /* ===== Navbar ===== */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #0f0f0f;
-      border-bottom: 1px solid #1f1f1f;
-    }
-
-    .logo {
-      color: #D2042D;
-      font-size: 1.6rem;
-      font-weight: bold;
-      text-shadow: 0 0 8px #D2042D;
-    }
-
-    .hamburger {
-      color: #D2042D;
-      font-size: 1.5rem;
-      cursor: pointer;
-      display: none;
-      transition: 0.3s;
-    }
-
-    .hamburger:hover {
-      text-shadow: 0 0 10px #D2042D;
-      animation: glowPulse 1.5s infinite;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-      transition: 0.3s;
-    }
-
-    nav ul li a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #D2042D;
-      transition: width 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #D2042D;
-      text-shadow: 0 0 8px #D2042D;
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: #0b0b0b;
-        width: 100%;
-        text-align: center;
-        padding: 20px 0;
-      }
-
-      nav.active ul {
-        display: flex;
-      }
-    }
-
-    /* ===== Hero Section ===== */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: radial-gradient(circle at center, #1a1a1a 0%, #0b0b0b 100%);
-    }
-
-    .hero h1 {
-      color: #D2042D;
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: glowPulse 2s ease-in-out infinite;
-    }
-
-    .hero p {
-      color: #fff;
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-
-    /* ===== Features ===== */
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 60px 20px;
-      background-color: #0f0f0f;
-    }
-
-    .feature {
-      background: #111;
-      border-radius: 10px;
-      padding: 30px;
-      max-width: 300px;
-      text-align: center;
-      border: 1px solid #1f1f1f;
-      transition: 0.3s;
-    }
-
-    .feature:hover {
-      transform: scale(1.05);
-      animation: glowPulse 1.5s ease-in-out infinite;
-    }
-
-    .feature h2 {
-      color: #D2042D;
-      margin-bottom: 15px;
-    }
-
-    .feature p {
-      color: #fff;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: #0b0b0b;
-      color: #fff;
-      flex-wrap: wrap;
-      border-top: 1px solid #1f1f1f;
-    }
-
-    .footer-text {
-      font-size: 14px;
-    }
-
-    .footer-buttons {
-      display: flex;
-      gap: 18px;
-    }
-
-    .footer-buttons a {
-      color: #D2042D;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .footer-buttons a:hover {
-      text-shadow: 0 0 8px #D2042D;
-      animation: glowPulse 1.5s ease-in-out infinite;
-    }
-
-    @media (max-width: 600px) {
-      footer {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-buttons {
-        margin-top: 10px;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">Crime Network</div>
-      <div class="hamburger">&#9776;</div>
-      <ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul id="nav-links">
         <li><a href="index">Home</a></li>
         <li><a href="documentation">Documentation</a></li>
         <li><a href="staff">Staff</a></li>
@@ -224,7 +22,7 @@
     </nav>
     <div class="hero">
       <h1>Crime Network</h1>
-      <p>The leading platform for private, secure, & reliable media & security services and information.</p>
+      <p>The leading platform for private, secure, and reliable media & security services.</p>
     </div>
   </header>
 
@@ -232,15 +30,15 @@
     <section class="features">
       <div class="feature">
         <h2>Investigations</h2>
-        <p>Crime Network is dedicated to live and up-to-date investigation of real-world and digital crimes, reporting our findings to keep you safe and informed.</p>
+        <p>We track and analyze both real-world and digital crimes, keeping you informed and secure.</p>
       </div>
       <div class="feature">
         <h2>Documentation</h2>
-        <p>We document cyber-related and real-world crimes to keep you up-to-date on underground and digital networks.</p>
+        <p>Stay up-to-date on underground networks and cybercrime activity through verified documentation.</p>
       </div>
       <div class="feature">
         <h2>Protection</h2>
-        <p>CrimeVPN encrypts your connection, protects your identity, and keeps hackers, trackers, and cyber threats out of your business.</p>
+        <p>CrimeVPN ensures your online presence remains private and your data safe from cyber threats.</p>
       </div>
     </section>
   </main>
@@ -253,12 +51,13 @@
       <a href="about">About</a>
     </div>
   </footer>
-  
+
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
     hamburger.addEventListener('click', () => {
-      nav.classList.toggle('active');
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
