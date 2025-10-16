@@ -2,17 +2,18 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #0b0b0b;
   color: #fff;
-}
-
-body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  flex: 1;
+  background-color: #1a1a1a; /* dark grey below black top */
 }
 
 /* ================= Glow Animation ================= */
@@ -30,7 +31,7 @@ nav {
   padding: 20px 40px;
   background-color: #000;
   border-bottom: 1px solid #1f1f1f;
-  z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -40,6 +41,21 @@ nav {
   text-shadow: 0 0 8px #D2042D;
 }
 
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  color: #D2042D;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  text-shadow: 0 0 10px #D2042D;
+  transform: scale(1.1);
+}
+
+/* Nav Links */
 nav ul {
   list-style: none;
   display: flex;
@@ -52,6 +68,7 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
   transition: 0.3s;
 }
 
@@ -60,11 +77,24 @@ nav ul li a:hover {
   text-shadow: 0 0 8px #D2042D;
 }
 
+nav ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #D2042D;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
 /* ================= Hero ================= */
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(to bottom, #000 0%, #1a1a1a 100%);
+  background-color: #000; /* black top section */
 }
 
 .hero h1 {
@@ -72,7 +102,7 @@ nav ul li a:hover {
   font-size: 3rem;
   margin-bottom: 20px;
   animation: glowPulse 2s ease-in-out infinite;
-  border: none;
+  border: none; /* removed box */
 }
 
 .hero p {
@@ -90,7 +120,7 @@ nav ul li a:hover {
   justify-content: center;
   gap: 40px;
   padding: 60px 20px;
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; /* dark grey main section */
 }
 
 .feature {
@@ -119,63 +149,18 @@ nav ul li a:hover {
   opacity: 0.9;
 }
 
-/* ================= Staff Cards ================= */
-.staff-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2rem;
-  margin-bottom: 80px; /* space for fixed footer */
-}
-
-.staff-card {
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 250px;
-  padding-bottom: 1rem;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-}
-
-.staff-card .banner {
-  width: 100%;
-  height: 0;
-  padding-top: 35%;
-  background-size: cover;
-  background-position: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.staff-card .pfp {
-  width: 80%;
-  max-width: 120px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-top: -50px;
-  border: 3px solid #D2042D;
-}
-
 /* ================= Footer ================= */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  flex-wrap: nowrap;
+  padding: 20px 40px;
   background-color: #000;
-  border-top: 1px solid #1f1f1f;
   color: #fff;
-  z-index: 1000;
+  border-top: 1px solid #1f1f1f;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-text {
@@ -196,4 +181,28 @@ footer {
 
 .footer-buttons a:hover {
   text-shadow: 0 0 8px #D2042D;
+}
+
+/* ================= Simple Mobile Menu ================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: 10px 0;
+  }
 }
