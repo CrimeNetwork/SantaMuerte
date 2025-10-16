@@ -3,15 +3,19 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #0b0b0b;
-  color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-main {
+/* ================= Body & Background ================= */
+body {
+  background-color: #1a1a1a; /* dark grey for main content */
   flex: 1;
+}
+
+header {
+  background-color: #0b0b0b; /* black for top hero/nav area */
 }
 
 /* ================= Glow Animation ================= */
@@ -27,7 +31,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #0f0f0f;
+  background-color: #0b0b0b;
   border-bottom: 1px solid #1f1f1f;
   flex-wrap: wrap;
   position: relative;
@@ -41,6 +45,7 @@ nav {
   text-shadow: 0 0 8px #D2042D;
 }
 
+/* Hamburger */
 .hamburger {
   color: #D2042D;
   font-size: 1.8rem;
@@ -92,14 +97,8 @@ nav ul li a:hover::after {
 
 /* ================= Responsive Menu ================= */
 @keyframes slideDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
@@ -115,7 +114,6 @@ nav ul li a:hover::after {
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid #1f1f1f;
-    animation: none;
   }
 
   nav ul.active {
@@ -132,7 +130,7 @@ nav ul li a:hover::after {
 .hero {
   text-align: center;
   padding: 100px 20px;
-  background: radial-gradient(circle at center, #1a1a1a 0%, #0b0b0b 100%);
+  background-color: #0b0b0b;
 }
 
 .hero h1 {
@@ -140,12 +138,7 @@ nav ul li a:hover::after {
   font-size: 3rem;
   margin-bottom: 20px;
   animation: glowPulse 2s ease-in-out infinite;
-  border: none !important;
-  outline: none !important;
-  background: none !important;
-  box-shadow: none !important;
-  display: inline-block;
-  text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D;
+  border: none;
 }
 
 .hero p {
@@ -163,7 +156,7 @@ nav ul li a:hover::after {
   justify-content: center;
   gap: 40px;
   padding: 60px 20px;
-  background-color: #0f0f0f;
+  background-color: #1a1a1a;
 }
 
 .feature {
@@ -197,27 +190,22 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 20px 30px;
+  padding: 20px 40px;
   background-color: #0b0b0b;
   color: #fff;
   border-top: 1px solid #1f1f1f;
+  flex-wrap: wrap;
   width: 100%;
 }
 
 .footer-text {
   font-size: 14px;
-  flex: 1 1 100%;
-  text-align: center;
-  margin-bottom: 10px;
 }
 
 .footer-buttons {
   display: flex;
-  justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 .footer-buttons a {
@@ -227,26 +215,37 @@ footer {
   transition: 0.3s;
 }
 
-.footer-buttons a:hover,
-.footer-buttons a:active {
+.footer-buttons a:hover {
   text-shadow: 0 0 8px #D2042D;
 }
 
-/* Footer alignment for larger screens */
-@media (min-width: 600px) {
+/* Footer Responsive */
+@media (max-width: 600px) {
   footer {
-    flex-direction: row;
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
   }
 
   .footer-text {
-    flex: 1;
-    text-align: left;
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
   .footer-buttons {
-    flex: 1;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) {
+  footer {
+    flex-direction: row;
+  }
+
+  .footer-text {
+    text-align: left;
+  }
+
+  .footer-buttons {
     justify-content: flex-end;
   }
 }
