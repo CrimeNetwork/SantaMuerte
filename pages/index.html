@@ -14,7 +14,7 @@
       align-items: center;
       padding: 15px 30px;
       background-color: #0b0b0b; /* Dark footer */
-      color: #e5e5e5;
+      color: #fff; /* white text */
       flex-wrap: wrap;
       border-top: 1px solid #1f1f1f;
     }
@@ -29,7 +29,7 @@
     }
 
     .footer-buttons a {
-      color: #00b3b3;
+      color: #D2042D; /* cherry red links */
       text-decoration: none;
       font-size: 14px;
       transition: 0.3s;
@@ -37,8 +37,8 @@
     }
 
     .footer-buttons a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 8px #00ffff;
+      color: #D2042D; /* cherry red hover stays the same for consistency */
+      text-shadow: 0 0 8px #D2042D; /* cherry red glow on hover */
     }
 
     @media (max-width: 600px) {
@@ -51,13 +51,42 @@
         margin-top: 10px;
       }
     }
+
+    /* Inline hero & nav colors if any */
+    .hamburger {
+      color: #D2042D; /* cherry red */
+    }
+
+    nav ul li a {
+      color: #D2042D; /* cherry red links */
+    }
+
+    nav ul li a:hover {
+      color: #D2042D; /* cherry red hover */
+    }
+
+    .hero h1 {
+      color: #D2042D; /* cherry red heading */
+    }
+
+    .hero p {
+      color: #fff; /* keep text white */
+    }
+
+    .feature h2 {
+      color: #D2042D; /* cherry red feature headings */
+    }
+
+    .feature p {
+      color: #fff; /* keep text white */
+    }
   </style>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo">Crime Network</div>
-      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+      <div class="hamburger">&#9776;</div>
       <ul>
         <li><a href="index">Home</a></li>
         <li><a href="documentation">Documentation</a></li>
