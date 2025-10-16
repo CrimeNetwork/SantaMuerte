@@ -142,8 +142,7 @@ nav ul li a:hover::after {
 .main-section {
   background-color: #000; /* full dark black background */
   padding: 60px 20px;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .cards-container {
@@ -154,6 +153,8 @@ nav ul li a:hover::after {
   background-color: #1a1a1a; /* dark grey section background */
   padding: 40px;
   border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto; /* center the container */
 }
 
 .card {
@@ -165,6 +166,7 @@ nav ul li a:hover::after {
   text-align: center;
   border: 1px solid #1f1f1f;
   transition: 0.3s;
+  flex: 1 1 250px; /* make cards responsive */
 }
 
 .card:hover {
@@ -181,6 +183,19 @@ nav ul li a:hover::after {
   color: #fff;
   font-size: 0.95rem;
   opacity: 0.9;
+}
+
+/* ================= Responsive for Mobile ================= */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
 }
 
 /* ================= Footer ================= */
