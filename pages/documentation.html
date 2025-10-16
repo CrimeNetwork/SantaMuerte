@@ -7,80 +7,70 @@
 <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
 <style>
-/* ================= Index-Based Colors & General ================= */
-body { margin:0; font-family: Arial, sans-serif; background:#111; color:#e5e5e5; }
-a { color:#00b3b3; text-decoration:none; }
-a:hover { color:#00ffff; text-shadow:0 0 8px #00ffff; }
-
-/* Header & Navigation */
-header { background:#111; padding-bottom:2rem; }
+/* ================= General ================= */
+body { margin:0; font-family: Arial,sans-serif; background:#111; color:#fff; }
+a { color:#fff; text-decoration:none; }
+header { background:#0b0b0b; padding-bottom:2rem; }
 nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
 nav ul { list-style:none; display:flex; gap:1rem; }
 nav li { padding:0.5rem 1rem; }
-nav li:hover { background:#222; border-radius:5px; }
-nav li a.active { color:#00b3b3; text-shadow:0 0 5px #00ffff; }
-.hamburger { display:none; font-size:1.5rem; color:#00b3b3; cursor:pointer; }
-
-/* Hero Section */
+nav li:hover { background:#1a1a1a; border-radius:5px; }
+.hamburger { display:none; font-size:1.5rem; color:#ff1c2c; cursor:pointer; }
 .hero { text-align:center; padding:4rem 2%; }
-.hero h1 { font-size:clamp(1.6rem,5vw,3rem); color:#00b3b3; text-shadow:0 0 5px #00ffff; }
+.hero h1 { font-size:clamp(1.6rem,5vw,3rem); color:#ff1c2c; text-shadow:0 0 6px rgba(255,28,44,0.5);}
 .hero p { font-size:clamp(0.9rem,2.5vw,1.2rem); max-width:800px; margin:0 auto; }
 
-/* Tabs */
-.tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:2rem 0; }
-.tab-button { background:#111; color:#e5e5e5; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s; }
-.tab-button.active { background:#00b3b3; color:#111; box-shadow:0 0 5px #00ffff; }
-.tab-button:hover { background:#222; transform:scale(1.05); }
+.tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:2rem 0; gap:6px; }
+.tab-button { background:#0b0b0b; color:#fff; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s, box-shadow 0.2s; }
+.tab-button.active { background:#ff1c2c; color:#fff; box-shadow:0 0 8px rgba(255,28,44,0.5); }
+.tab-button:hover { background:#1a1a1a; transform:scale(1.05); }
 
-/* Tab Content */
 .tab-content { max-width:1000px; margin:0 auto 2rem auto; display:none; opacity:0; transition:opacity 0.3s ease; }
 .tab-content.active { display:block; opacity:1; }
 
-/* State Tabs */
+.search-container { text-align:center; margin-bottom:15px; }
+.search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #333; background:#0b0b0b; color:#fff; }
+
 .state-tabs { display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; gap:6px; padding:5px 0; margin-bottom:15px; }
 .state-tabs::-webkit-scrollbar { height:6px; }
-.state-tabs::-webkit-scrollbar-track { background:#111; }
-.state-tabs::-webkit-scrollbar-thumb { background:#222; border-radius:3px; }
-.state-button { flex:0 0 auto; background:#111; border:1px solid #222; color:#e5e5e5; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
-.state-button.active, .state-button:hover { background:#222; border-color:#00b3b3; box-shadow:0 0 5px #00ffff; }
+.state-tabs::-webkit-scrollbar-track { background:#0b0b0b; }
+.state-tabs::-webkit-scrollbar-thumb { background:#333; border-radius:3px; }
 
-/* Documentation Cards */
+.state-button { flex:0 0 auto; background:#111; border:1px solid #333; color:#fff; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
+.state-button.active, .state-button:hover { background:#222; border-color:#ff1c2c; box-shadow:0 0 6px rgba(255,28,44,0.4); }
+
 .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; padding:10px; }
-.doc-card { background:#111; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
-.doc-card:hover { transform:scale(1.02); background:#222; box-shadow:0 0 10px #00ffff; }
-.doc-card h3 { margin:0 0 8px; color:#00b3b3; text-shadow:0 0 5px #00ffff; }
+.doc-card { background:#0b0b0b; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; color:#fff; }
+.doc-card:hover { transform:scale(1.02); background:#111; box-shadow:0 0 10px rgba(255,28,44,0.4); }
+.doc-card h3 { margin:0 0 8px; color:#ff1c2c; text-shadow:0 0 4px rgba(255,28,44,0.4); }
 .doc-card p { margin:0 0 12px; color:#ccc; }
-.more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#00b3b3; color:#111; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s; }
-.more-btn:hover { background:#00ffff; transform:scale(1.05); }
+.more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#ff1c2c; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s, box-shadow 0.2s; }
+.more-btn:hover { background:#fff; color:#ff1c2c; transform:scale(1.05); box-shadow:0 0 8px rgba(255,28,44,0.5); }
 
-/* Search Inputs */
-.search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #222; background:#111; color:#e5e5e5; }
-.search-container input::placeholder { color:#ccc; }
-
-/* Footer */
-footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#0b0b0b; color:#e5e5e5; flex-wrap:wrap; border-top:1px solid #1f1f1f; }
+footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#0b0b0b; color:#fff; flex-wrap:wrap; border-top:1px solid #111; }
 .footer-text { font-size:14px; }
 .footer-buttons { display:flex; gap:18px; }
-.footer-buttons a { color:#00b3b3; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
-.footer-buttons a:hover { color:#00ffff; text-shadow:0 0 5px #00ffff; }
+.footer-buttons a { color:#ff1c2c; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
+.footer-buttons a:hover { color:#fff; text-shadow:0 0 6px rgba(255,28,44,0.5); }
 
-/* Responsive */
-@media (max-width:768px){ 
-  nav{flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;} 
-  nav ul{flex-direction:column;width:100%;padding:0;} 
-  nav li{width:100%;text-align:center;padding:0.7rem 0;} 
-  .hero h1{font-size:2rem;} 
-  .hero p{font-size:1rem;} 
-  .search-container input{width:80%;} 
+/* ================= Responsive ================= */
+@media (max-width:768px){
+  nav{flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;}
+  nav ul{flex-direction:column;width:100%;padding:0;}
+  nav li{width:100%;text-align:center;padding:0.7rem 0;}
+  .hero h1{font-size:2rem;}
+  .hero p{font-size:1rem;}
+  .search-container input{width:80%;}
 }
-@media (max-width:480px){ 
-  nav ul{display:none;} nav.active ul{display:flex;flex-direction:column;width:100%;} 
-  .hamburger{display:block;} 
-  .hero{padding:2rem 1rem;} 
-  .hero h1{font-size:1.6rem;} 
-  .hero p{font-size:0.9rem;} 
-  .search-container input{width:95%;} 
-  .doc-grid{padding:5px;} 
+@media (max-width:480px){
+  nav ul{display:none;}
+  nav.active ul{display:flex;flex-direction:column;width:100%;}
+  .hamburger{display:block;}
+  .hero{padding:2rem 1rem;}
+  .hero h1{font-size:1.6rem;}
+  .hero p{font-size:0.9rem;}
+  .search-container input{width:95%;}
+  .doc-grid{padding:5px;}
 }
 </style>
 </head>
@@ -117,13 +107,13 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <input type="text" placeholder="Search gangs..." onkeyup="searchDocs(this,'gang-docs')">
 </div>
 <div class="state-tabs">
-<button class="state-button active" onclick="openState('gang-docs','ohio')">Ohio</button>
-<button class="state-button" onclick="openState('gang-docs','california')">California</button>
-<button class="state-button" onclick="openState('gang-docs','illinois')">Illinois</button>
+<button class="state-button active" onclick="openState(event,'gang-docs','ohio')">Ohio</button>
+<button class="state-button" onclick="openState(event,'gang-docs','california')">California</button>
+<button class="state-button" onclick="openState(event,'gang-docs','illinois')">Illinois</button>
 </div>
+<!-- Ohio Cards -->
 <div id="gang-docs-ohio" class="state-content" style="display:block;">
 <div class="doc-grid">
-<!-- All your original Ohio gang cards -->
 <div class="doc-card">
 <h3>BL-800 (Columbus, OH)</h3>
 <p>BL-800 is a notorious gang operating in Columbus, involved in multiple criminal activities.</p>
@@ -174,6 +164,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 
+<!-- California Cards -->
 <div id="gang-docs-california" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -184,6 +175,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 
+<!-- Illinois Cards -->
 <div id="gang-docs-illinois" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -201,9 +193,10 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <input type="text" placeholder="Search IRL crimes..." onkeyup="searchDocs(this,'irl-crime')">
 </div>
 <div class="state-tabs">
-<button class="state-button active" onclick="openState('irl-crime','ohio')">Ohio</button>
-<button class="state-button" onclick="openState('irl-crime','california')">California</button>
+<button class="state-button active" onclick="openState(event,'irl-crime','ohio')">Ohio</button>
+<button class="state-button" onclick="openState(event,'irl-crime','california')">California</button>
 </div>
+
 <div id="irl-crime-ohio" class="state-content" style="display:block;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -218,6 +211,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 </div>
+
 <div id="irl-crime-california" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -280,15 +274,15 @@ function openTab(evt, tabId){
 }
 
 // State Tabs
-function openState(tabId,stateId){
+function openState(evt, tabId,stateId){
   const tab=document.getElementById(tabId);
   tab.querySelectorAll(".state-content").forEach(c=>c.style.display="none");
   tab.querySelectorAll(".state-button").forEach(b=>b.classList.remove("active"));
   document.getElementById(tabId+"-"+stateId).style.display="block";
-  event.currentTarget.classList.add("active");
+  evt.currentTarget.classList.add("active");
 }
 
-// Search
+// Search with auto-scroll
 function searchDocs(input,tabId){
   const filter=input.value.toLowerCase();
   const tab=document.getElementById(tabId);
