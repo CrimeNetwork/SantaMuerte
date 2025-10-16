@@ -5,16 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Staff | Crime Network</title>
   <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
-   <style>
+
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b0b0b;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    header nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    header .hero h1 {
+      color: #FF0033;
+      text-shadow: 0 0 6px rgba(255, 0, 50, 0.5);
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    header .hero h1:hover {
+      text-shadow: 0 0 12px rgba(255, 0, 50, 0.8), 0 0 20px rgba(255, 0, 50, 0.5);
+      transform: scale(1.02);
+    }
+
+    header .hero p {
+      color: #ffffff;
+      font-size: 1.1rem;
+      text-shadow: 0 0 2px rgba(255, 0, 50, 0.2);
+    }
+
+    .staff-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .staff-card {
+      background-color: #0d0d0d;
+      border-radius: 12px;
+      width: 250px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 0, 50, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .staff-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 0, 50, 0.5);
+    }
+
+    .staff-card .banner {
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .staff-card .pfp {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-top: -50px;
+      border: 3px solid #FF0033;
+    }
+
+    .staff-card h3 {
+      color: #FF0033;
+      margin: 10px 0 5px;
+      text-shadow: 0 0 6px rgba(255, 0, 50, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .staff-card h3:hover {
+      text-shadow: 0 0 12px rgba(255, 0, 50, 0.8), 0 0 20px rgba(255, 0, 50, 0.5);
+      transform: scale(1.05);
+    }
+
+    .staff-card p {
+      color: #ffffff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 2px rgba(255, 0, 50, 0.2);
+    }
+
     footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 30px;
-      background-color: #0b0b0b; /* Dark footer */
-      color: #e5e5e5;
+      background-color: #0b0b0b;
+      color: #ffffff;
       flex-wrap: wrap;
       border-top: 1px solid #1f1f1f;
     }
@@ -29,7 +134,7 @@
     }
 
     .footer-buttons a {
-      color: #00b3b3;
+      color: #FF0033;
       text-decoration: none;
       font-size: 14px;
       transition: 0.3s;
@@ -37,8 +142,8 @@
     }
 
     .footer-buttons a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 8px #00ffff;
+      color: #ffffff;
+      text-shadow: 0 0 8px #FF0033;
     }
 
     @media (max-width: 600px) {
@@ -50,6 +155,11 @@
       .footer-buttons {
         margin-top: 10px;
       }
+      
+      .staff-cards {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -57,7 +167,7 @@
   <header>
     <nav>
       <div class="logo">Crime Network</div>
-      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+      <div class="hamburger">&#9776;</div>
       <ul>
         <li><a href="index">Home</a></li>
         <li><a href="documentation">Documentation</a></li>
@@ -79,77 +189,27 @@
         <h3>Draco</h3>
         <p>Founder</p>
       </div>
-    <!-- hidden for now
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/ban1.jpg');"></div>
-        <img src="assets/images/staff/Acunetixpfp.png" alt="Acunetix" class="pfp">
-        <h3>Acunetix</h3>
-        <p>CTO & Cybersecurity Lead</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/auddevban.jpg');"></div>
-        <img src="assets/images/staff/Audpfp.jpg" alt="AudDev" class="pfp">
-        <h3>AudDev</h3>
-        <p>Cyber Intelligence Analyst</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/Dymiaban.jpg');"></div>
-        <img src="assets/images/staff/Dymiapfp.jpg" alt="Dymia" class="pfp">
-        <h3>Dymia</h3>
-        <p>Editor-in-Chief</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/banner2.jpg');"></div>
-        <img src="assets/images/staff/Pippfp.jpg" alt="Pip" class="pfp">
-        <h3>Pip</h3>
-        <p>Community & Social Media Manager</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/BNKBan.jpg');"></div>
-        <img src="assets/images/staff/valuepfp.jpg" alt="Value" class="pfp">
-        <h3>Value</h3>
-        <p>Director of Investigations</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/percspittuhban.jpg');"></div>
-        <img src="assets/images/staff/percspittuhpfp.jpg" alt="PercSpittuh" class="pfp">
-        <h3>PercSpittuh</h3>
-        <p>Lead True Crime Investigator</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/eliban.jpg');"></div>
-        <img src="assets/images/staff/elipfp.jpg" alt="Eli" class="pfp">
-        <h3>Eli</h3>
-        <p>Multimedia & Graphic Designer</p>
-      </div>
-      <div class="staff-card">
-        <div class="banner" style="background-image: url('assets/images/staff/scarsban.jpg');"></div>
-        <img src="assets/images/staff/scarspfp.jpg" alt="Scars" class="pfp">
-        <h3>Scars</h3>
-        <p>Digital Forensics Analyst</p>
-      </div> 
-      -->
-      
+
+      <!-- Additional staff cards can be added here with the same styles -->
     </section>
   </main>
 
-<footer style="margin-top: 2rem;">
-  <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
-  <div class="footer-buttons">
-    <a href="privacy">Privacy Policy</a>
-    <a href="tos">Terms of Service</a>
-    <a href="about">About</a>
-  </div>
-</footer>
+  <footer style="margin-top: 2rem;">
+    <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+    <div class="footer-buttons">
+      <a href="privacy">Privacy Policy</a>
+      <a href="tos">Terms of Service</a>
+      <a href="about">About</a>
+    </div>
+  </footer>
 
   <script>
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('nav');
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
 
-hamburger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
-</script>
-  
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
