@@ -9,9 +9,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
 
   <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
+    /* Main padding */
     main {
       padding: 40px 10%;
     }
@@ -24,6 +25,7 @@
       box-shadow: 0 0 20px rgba(255, 0, 50, 0.2);
     }
 
+    /* Headings with subtle glow */
     h1, h2, h3 {
       color: #FF0033;
       margin-bottom: 15px;
@@ -34,24 +36,32 @@
       text-shadow: 0 0 12px rgba(255, 0, 50, 0.8);
     }
 
+    /* PSA section */
     .psa {
       border-left: 5px solid #FF0033;
       background-color: #0d0d0d;
       padding: 20px 25px;
     }
 
-    .about-section p, .history-section p, .mission-section p, ul {
+    /* Paragraphs */
+    .about-section p, .history-section p, .mission-section p {
       line-height: 1.7;
       margin-bottom: 15px;
       color: #ffffff;
+    }
+
+    .history-section, .mission-section, .social-section {
+      margin-top: 20px;
     }
 
     ul {
       list-style: disc inside;
       margin-left: 15px;
       line-height: 1.6;
+      color: #ffffff;
     }
 
+    /* Social links */
     .social-links {
       display: flex;
       gap: 20px;
@@ -83,6 +93,7 @@
       font-size: 18px;
     }
 
+    /* Footer */
     footer {
       display: flex;
       justify-content: space-between;
@@ -116,20 +127,77 @@
       text-shadow: 0 0 8px #FF0033;
     }
 
-    /* ================= Mobile Hamburger ================= */
+    /* ========== Navigation ========== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b0b0b;
+    }
+
+    nav .logo {
+      color: #FF0033;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-shadow: 0 0 6px rgba(255,0,50,0.5);
+    }
+
+    .hamburger {
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #FF0033;
+      display: none;
+    }
+
+    .hamburger:hover {
+      text-shadow: 0 0 10px #FF0033;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #FF0033;
+      text-shadow: 0 0 8px #FF0033;
+    }
+
+    nav ul li a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #FF0033;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu */
     @media (max-width: 768px) {
       .hamburger {
         display: block;
-        color: #FF0033;
-        font-size: 1.8rem;
-        cursor: pointer;
       }
 
       nav ul {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #0b0b0b;
+        background-color: #0b0b0b; /* Match nav background */
         text-align: center;
         padding: 0;
         margin: 0;
@@ -143,6 +211,7 @@
       nav ul li {
         width: 100%;
         padding: 12px 0;
+        background-color: #0b0b0b; /* Remove gray patches */
       }
     }
   </style>
@@ -184,10 +253,16 @@
         <h2>History & Origins</h2>
         <p>
           Crime Network began as a small online project focused on Virtual private networks, Discord bots & selfbots, stress testing tools, VPS's and an assortment of multi-tools on Mar 30, 2022.
+          It was founded by a group of independent cybersecurity researchers and aspiring programmers. Crime Network had gathered a small Discord following of about 300-400 members and an active community.
+          Crime Network was disbanded around August 30, 2022, after the Discord server was terminated. Crime Network made a PSA on the website at the time to all of their VPN customers that it would be shutting down in 30 days.
+          After the shutdown of Crime Network, also known as Crime Network, LLC at the time remained dormant and disbanded but still under the same ownership. 
         </p>
         <p>
           As of October 11th, 2025, Crime Network is back after nearly 4 consistent years of lying dormant.<br>
           Crime Network has since undergone a complete rebranding and repositioning and is now under new management and ownership.
+          Crime Network is now managed and owned by a group of independent researchers, cybersecurity, and real-world crime journalists and analysts.<br><br>
+          The platform’s mission has since changed from its roots and has become a platform for real-world and cybersecurity investigations. We combine journalism, education, and privacy technology to help people understand the underworld and stay safe from it. <br>
+          The only thing kept from the original roots of Crime Network is its VPN (CrimeVPN) and its discord bots.
         </p>
       </div>
     </section>
@@ -198,10 +273,10 @@
         Our mission is to empower individuals and organizations with accurate news information, cybersecurity tools, and crime awareness resources.
       </p>
       <ul>
-        <li><strong>Transparency:</strong> We are committed to clear and fact-based reporting.</li>
-        <li><strong>Security:</strong> Your privacy and protection are at the heart of everything we do.</li>
-        <li><strong>Education:</strong> Knowledge is the first line of defense against crime.</li>
-        <li><strong>Innovation:</strong> We merge cutting-edge technology with investigative expertise to stay ahead of evolving threats.</li>
+        <li><strong>Transparency:</strong> We are committed to clear and fact-based reporting. Every story we publish is grounded in verified information, <br>ensuring our audience receives accurate and trustworthy content. We strive to make complex topics accessible so that everyone can understand and engage with the truth.</li><br>
+        <li><strong>Security:</strong> Your privacy and protection are at the heart of everything we do. We employ the latest tools and practices to safeguard your data and keep you safe online. With Crime Network, you can explore, learn, and engage with confidence, knowing your information is always protected.</li><br>
+        <li><strong>Education:</strong> Knowledge is the first line of defense against crime. We provide clear, fact-based resources and investigative insights to help you understand both real-world and digital threats. By empowering our audience with information, we give them the tools to stay safe and make informed decisions.</li><br>
+        <li><strong>Innovation:</strong> We merge cutting-edge technology with investigative expertise to stay ahead of evolving threats. From deep-dive analyses to advanced cybersecurity solutions, we are constantly pushing boundaries to uncover the truth and protect our users. At Crime Network, innovation drives both safety and discovery.</li>
       </ul>
     </section>
 
@@ -219,7 +294,7 @@
 
     <section class="social-section">
       <h2>! Disclaimer !</h2>
-      <p>Crime Network stands against all forms of illegal activity, cybercrime, and violence.</p>
+      <p>Crime Network stands against all forms of illegal activity, cybercrime, and violence. Our investigations, reports, and educational resources are meant for awareness, prevention, and protection — not for glorification or encouragement of criminal acts.</p>
     </section>
   </main>
 
@@ -234,10 +309,10 @@
 
   <script>
     const hamburger = document.querySelector('.hamburger');
-    const navUL = document.querySelector('nav ul');
+    const navUl = document.querySelector('nav ul');
 
     hamburger.addEventListener('click', () => {
-      navUL.classList.toggle('active');
+      navUl.classList.toggle('active');
     });
   </script>
 </body>
