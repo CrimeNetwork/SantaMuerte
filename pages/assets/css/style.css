@@ -138,37 +138,46 @@ nav ul li a:hover::after {
   opacity: 0.9;
 }
 
-/* ================= Features ================= */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+/* ================= Main Section with Cards ================= */
+.main-section {
+  background-color: #000; /* full dark black background */
   padding: 60px 20px;
-  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
 }
 
-.feature {
-  background: #111;
-  border-radius: 10px;
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  background-color: #1a1a1a; /* dark grey section background */
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.card {
+  background-color: #111; /* dark card background */
+  color: #fff;
   padding: 30px;
+  border-radius: 10px;
   max-width: 300px;
   text-align: center;
   border: 1px solid #1f1f1f;
   transition: 0.3s;
 }
 
-.feature:hover {
+.card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #D2042D;
 }
 
-.feature h2 {
+.card h2 {
   color: #D2042D;
   margin-bottom: 15px;
 }
 
-.feature p {
+.card p {
   color: #fff;
   font-size: 0.95rem;
   opacity: 0.9;
