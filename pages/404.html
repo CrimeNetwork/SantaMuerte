@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Crime Network</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon.ico">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    main {
+      padding: 40px 10%;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 25px;
+      background-color: #111;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 179, 179, 0.2);
+    }
+
+    h1, h2, h3 {
+      color: #00b3b3;
+      margin-bottom: 15px;
+    }
+
+    .psa {
+      border-left: 5px solid #00b3b3;
+      background-color: #0d0d0d;
+      padding: 20px 25px;
+    }
+
+    .about-section p, .history-section p, .mission-section p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #e5e5e5;
+    }
+
+    .history-section, .mission-section, .social-section {
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: disc inside;
+      margin-left: 15px;
+      line-height: 1.6;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #00b3b3;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 8px;
+      background-color: #0b0b0b;
+      transition: all 0.3s;
+      box-shadow: 0 0 5px rgba(0, 179, 179, 0.3);
+    }
+
+    .social-links a:hover {
+      color: #0b0b0b;
+      background-color: #00b3b3;
+      box-shadow: 0 0 15px #00b3b3;
+    }
+
+    .social-links a i {
+      font-size: 18px;
+    }
+  </style>
+      <style>
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b0b0b; /* Dark footer */
+      color: #e5e5e5;
+      flex-wrap: wrap;
+      border-top: 1px solid #1f1f1f;
+    }
+
+    .footer-text {
+      font-size: 14px;
+    }
+
+    .footer-buttons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-buttons a {
+      color: #00b3b3;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+      padding: 6px 0;
+    }
+
+    .footer-buttons a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-buttons {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Crime Network</div>
+      <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
+      <ul>
+        <li><a href="/CrimeNetwork/pages/index">Home</a></li>
+        <li><a href="/CrimeNetwork/pages/documentation">Documentation</a></li>
+        <li><a href="/CrimeNetwork/pages/staff">Staff</a></li>
+        <li><a href="/CrimeNetwork/pages/about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PSA Section -->
+    <section class="psa">
+      <h2>! 404 !</h2>
+      <p>
+Sorry! This page is currently under development and isn't available at the moment.<br><br>
+        Check back at a later time, and it may become available. 
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+    <div class="footer-buttons">
+      <a href="/CrimeNetwork/pages/privacy">Privacy Policy</a>
+      <a href="/CrimeNetwork/pages/tos">Terms of Service</a>
+      <a href="/CrimeNetwork/pages/about">About</a>
+    </div>
+  </footer>
+
+  <script>
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
+  
+</body>
+</html>
