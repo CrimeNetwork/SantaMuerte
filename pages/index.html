@@ -1,63 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crime Network</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">Crime Network</div>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul id="nav-links">
-        <li><a href="index">Home</a></li>
-        <li><a href="documentation">Documentation</a></li>
-        <li><a href="staff">Staff</a></li>
-        <li><a href="about">About</a></li>
-      </ul>
-    </nav>
-    <div class="hero">
-      <h1>Crime Network</h1>
-      <p>The leading platform for private, secure, and reliable media & security services.</p>
-    </div>
-  </header>
+/* ================= General ================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0b0b0b;
+  color: #fff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-  <main>
-    <section class="features">
-      <div class="feature">
-        <h2>Investigations</h2>
-        <p>We track and analyze both real-world and digital crimes, keeping you informed and secure.</p>
-      </div>
-      <div class="feature">
-        <h2>Documentation</h2>
-        <p>Stay up-to-date on underground networks and cybercrime activity through verified documentation.</p>
-      </div>
-      <div class="feature">
-        <h2>Protection</h2>
-        <p>CrimeVPN ensures your online presence remains private and your data safe from cyber threats.</p>
-      </div>
-    </section>
-  </main>
+main {
+  flex: 1;
+}
 
-  <footer>
-    <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
-    <div class="footer-buttons">
-      <a href="privacy">Privacy Policy</a>
-      <a href="tos">Terms of Service</a>
-      <a href="about">About</a>
-    </div>
-  </footer>
+/* ================= Glow Animation ================= */
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D; }
+  50% { text-shadow: 0 0 16px #D2042D, 0 0 32px #D2042D; }
+  100% { text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D; }
+}
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+/* ================= Header & Navigation ================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #000;
+  border-bottom: 1px solid #1f1f1f;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1000;
+}
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-</body>
-</html>
+.logo {
+  color: #D2042D;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #D2042D;
+}
+
+.hamburger {
+  color: #D2042D;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  text-shadow: 0 0 10px #D2042D;
+  transform: scale(1.1);
+}
+
+/* Nav Links */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #D2042D;
+  text-shadow: 0 0 8px #D2042D;
+}
+
+/* Underline effect */
+nav ul li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #D2042D;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ================= Hamburger Menu ================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #1f1f1f;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* ================= Hero ================= */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, #000 0%, #1a1a1a 100%);
+}
+
+.hero h1 {
+  color: #D2042D;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: glowPulse 2s ease-in-out infinite;
+  border: none;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ================= Features ================= */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: #1a1a1a;
+}
+
+.feature {
+  background: #111;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid #1f1f1f;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #D2042D;
+}
+
+.feature h2 {
+  color: #D2042D;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: #fff;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ================= Footer ================= */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #1f1f1f;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-text {
+  font-size: 14px;
+  flex: 1 1 100%;
+  text-align: left;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-buttons a {
+  color: #D2042D;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-buttons a:hover {
+  text-shadow: 0 0 8px #D2042D;
+}
