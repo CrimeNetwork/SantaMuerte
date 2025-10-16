@@ -3,10 +3,10 @@ body {
 	margin: 0;
 	font-family: Arial, sans-serif;
 	background-color: #121212;
-	color: #f1f1f1;
+	color: #fff; /* all text stays white */
 }
 a {
-	color: #00bfff;
+	color: #D2042D; /* cherry red */
 	text-decoration: none;
 }
 /* ================= Header ================= */
@@ -37,7 +37,7 @@ nav li:hover {
 .hamburger {
 	display: none;
 	font-size: 1.5rem;
-	color: #00bfff;
+	color: #D2042D; /* cherry red */
 	cursor: pointer;
 }
 /* ================= Hero ================= */
@@ -75,31 +75,25 @@ nav li:hover {
 	gap: 1.5rem;
 	justify-content: center;
 	align-items: flex-start;
-	/* prevents stretching/cutting off text */
 	padding: 2rem;
 	margin-bottom: 4rem;
-	/* space for footer */
 }
 .staff-card {
 	background-color: #1e1e1e;
 	border-radius: 10px;
 	text-align: center;
 	overflow: visible;
-	/* ensures content isn't clipped */
 	flex: 1 1 auto;
-	/* allows card to grow naturally */
 	max-width: 250px;
 	padding-bottom: 1rem;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	/* stack banner, image, text */
 }
 .staff-card .banner {
 	width: 100%;
 	height: 0;
 	padding-top: 35%;
-	/* responsive aspect ratio */
 	background-size: cover;
 	background-position: center;
 	border-top-left-radius: 10px;
@@ -112,7 +106,7 @@ nav li:hover {
 	object-fit: cover;
 	border-radius: 50%;
 	margin-top: -50px;
-	border: 3px solid #00bfff;
+	border: 3px solid #D2042D; /* cherry red */
 }
 .staff-card h3, .staff-card p {
 	word-wrap: break-word;
@@ -121,9 +115,10 @@ nav li:hover {
 }
 .staff-card h3 {
 	font-size: clamp(1rem, 2.5vw, 1.2rem);
+	color: #D2042D; /* cherry red accent */
 }
 .staff-card p {
-	color: #aaa;
+	color: #fff; /* keep text white */
 	font-size: clamp(0.8rem, 2vw, 1rem);
 }
 /* ================= Story Cards ================= */
@@ -140,7 +135,7 @@ nav li:hover {
 .story-card:hover {
 	transform: scale(1.02);
 	background-color: #222;
-	box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+	box-shadow: 0 0 10px rgba(210, 4, 45, 0.3); /* cherry red glow */
 }
 /* ================= Story Pages ================= */
 .story-page {
@@ -150,22 +145,22 @@ nav li:hover {
 	background-color: #1e1e1e;
 	padding: 2rem;
 	border-radius: 12px;
-	box-shadow: 0 0 15px rgba(0, 191, 255, 0.15);
+	box-shadow: 0 0 15px rgba(210, 4, 45, 0.15); /* cherry red glow */
 }
 .story-page h1 {
-	color: #00bfff;
+	color: #D2042D; /* cherry red */
 	margin-bottom: 0.5rem;
 	font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 .story-page h2 {
-	color: #00bfff;
+	color: #D2042D; /* cherry red */
 	margin-top: 2rem;
 	border-bottom: 1px solid #2a2a2a;
 	padding-bottom: 0.3rem;
 	font-size: clamp(1.2rem, 4vw, 2rem);
 }
 .story-page p {
-	color: #ddd;
+	color: #fff; /* keep text white */
 	line-height: 1.7;
 	font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
@@ -184,7 +179,7 @@ nav li:hover {
 }
 .tab-button {
 	background-color: #1e1e1e;
-	color: #f1f1f1;
+	color: #fff; /* text stays white */
 	border: none;
 	padding: 0.7rem 1.5rem;
 	cursor: pointer;
@@ -193,8 +188,8 @@ nav li:hover {
 	transition: background-color 0.3s, transform 0.2s;
 }
 .tab-button.active {
-	background-color: #00bfff;
-	color: #121212;
+	background-color: #D2042D; /* cherry red */
+	color: #fff; /* text stays white */
 }
 .tab-button:hover {
 	background-color: #333;
@@ -210,143 +205,9 @@ footer {
 	padding: 1rem 2%;
 	font-size: clamp(0.8rem, 2.5vw, 1rem);
 	margin-top: 2rem;
-	/* optional extra spacing from content above */
 }
 footer a {
 	display: inline-block;
 	margin: 0.3rem 0.5rem;
-}
-/* ================= Media Queries ================= */
-@media (max-width: 1024px) {
-	.hero h1 {
-		font-size: 2.5rem;
-	}
-	.hero p {
-		font-size: 1.1rem;
-	}
-}
-@media (max-width: 768px) {
-	nav {
-		flex-direction: column;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 1rem;
-	}
-	nav ul {
-		flex-direction: column;
-		width: 100%;
-		padding: 0;
-	}
-	nav li {
-		width: 100%;
-		text-align: center;
-		padding: 0.7rem 0;
-	}
-	.features {
-		flex-direction: column;
-	}
-	.staff-cards {
-		flex-direction: column;
-		align-items: center;
-	}
-	.hero h1 {
-		font-size: 2rem;
-	}
-	.hero p {
-		font-size: 1rem;
-	}
-}
-@media (max-width: 480px) {
-	nav ul {
-		display: none;
-		/* Hide menu by default */
-	}
-	nav.active ul {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
-	.hamburger {
-		display: block;
-	}
-	.hero {
-		padding: 2rem 1rem;
-	}
-	.hero h1 {
-		font-size: 1.6rem;
-	}
-	.hero p {
-		font-size: 0.9rem;
-	}
-	.features, .staff-cards {
-		padding: 1rem 0.5rem;
-	}
-	.feature, .staff-card {
-		width: 90%;
-		max-width: none;
-	}
-	.tabs {
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-	.tab-button {
-		width: 100%;
-		text-align: center;
-		font-size: 0.9rem;
-	}
-	.story-page {
-		padding: 1rem;
-	}
-	.story-page h1 {
-		font-size: 1.5rem;
-	}
-	.story-page h2 {
-		font-size: 1.2rem;
-	}
-	.staff-card .pfp {
-		width: 50%;
-	}
-	.staff-card .banner {
-		padding-top: 40%;
-	}
-	.staff-cards {
-		margin-bottom: 6rem;
-		/* extra spacing for footer */
-	}
-}
-/* ================= Documentation Cards Grid ================= */
-.doc-container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	/* 2 cards per row on desktop */
-	gap: 20px;
-	padding: 1rem 2%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-.doc-card {
-	background-color: #1e1e1e;
-	border-radius: 10px;
-	padding: 1.5rem;
-	box-sizing: border-box;
-	transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
-.doc-card:hover {
-	transform: scale(1.02);
-	background-color: #222;
-	box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-}
-/* Responsive: stack documentation cards on smaller screens */
-@media (max-width: 768px) {
-	.doc-container {
-		grid-template-columns: 1fr;
-		/* stack vertically on tablets/small screens */
-	}
-}
-@media (max-width: 480px) {
-	.doc-container {
-		grid-template-columns: 1fr;
-		/* stack vertically on mobile */
-		padding: 1rem;
-	}
+	color: #D2042D; /* cherry red links */
 }
