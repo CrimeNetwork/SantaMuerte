@@ -10,496 +10,198 @@
 /* ========== General ========== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial,sans-serif;
   background: #0b0b0b;
   color: #fff;
 }
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
+a { color:#fff; text-decoration:none; }
 
 /* ========== Header & Nav ========== */
-header {
-  background: #0b0b0b;
-  padding-bottom: 2rem;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
-}
-
-.logo {
-  color: #D2042D;
-  font-weight: bold;
-  font-size: 1.6rem;
-  text-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
-  transition: text-shadow 0.3s ease-in-out;
-}
-
-.logo:hover {
-  text-shadow: 0 0 12px rgba(210, 4, 45, 0.8), 0 0 20px rgba(210, 4, 45, 0.6);
-}
+header { background: #0b0b0b; padding-bottom: 2rem; }
+nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; flex-wrap:wrap; }
+.logo { color:#D2042D; font-weight:bold; font-size:1.6rem; text-shadow:0 0 8px rgba(210,4,45,0.5); transition:0.3s; }
+.logo:hover { text-shadow:0 0 12px rgba(210,4,45,0.8),0 0 20px rgba(210,4,45,0.6); }
 
 /* Hamburger */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  color: #D2042D;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hamburger:hover {
-  text-shadow: 0 0 12px rgba(210, 4, 45, 0.8);
-  transform: scale(1.1);
-}
+.hamburger { display:none; font-size:1.8rem; color:#D2042D; cursor:pointer; transition:0.3s; }
+.hamburger:hover { text-shadow:0 0 12px rgba(210,4,45,0.8); transform:scale(1.1); }
 
 /* Nav links */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
+nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+nav li { position:relative; }
+nav li a { position:relative; display:inline-block; padding:0.5rem 1rem; color:#fff; transition:0.3s; }
+nav li a:hover { color:#D2042D; text-shadow:0 0 8px rgba(210,4,45,0.5); }
+nav li a::after { content:""; position:absolute; left:0; bottom:0; height:2px; width:0; background:#D2042D; transition:0.3s; }
+nav li a:hover::after, nav li a.active::after { width:100%; }
 
-nav li {
-  position: relative;
-}
-
-nav li a {
-  position: relative;
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-nav li a:hover {
-  color: #D2042D;
-  text-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
-}
-
-nav li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background: #D2042D;
-  transition: width 0.3s;
-}
-
-nav li a:hover::after,
-nav li a.active::after {
-  width: 100%;
-}
-
-/* Hamburger Menu Mobile */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
-  nav.active ul {
-    display: flex;
-  }
-  nav li {
-    width: 100%;
-    text-align: center;
-  }
-  .hamburger {
-    display: block;
-  }
+/* Hamburger Mobile */
+@media(max-width:768px){
+  nav{flex-direction:column;align-items:center;gap:0.5rem;}
+  nav ul{flex-direction:column;width:100%;display:none;}
+  nav.active ul{display:flex;}
+  nav li{text-align:center;width:100%;}
+  .hamburger{display:block;}
 }
 
 /* ========== Hero ========== */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero h1 {
-  color: #D2042D;
-  font-size: 3rem;
-  margin-bottom: 20px;
-  animation: glowPulse 2s ease-in-out infinite;
-}
-
-.hero p {
-  color: #fff;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-
-@keyframes glowPulse {
-  0% { text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D; }
-  50% { text-shadow: 0 0 16px #D2042D, 0 0 32px #D2042D; }
-  100% { text-shadow: 0 0 8px #D2042D, 0 0 16px #D2042D; }
-}
+.hero { text-align:center; padding:100px 20px; }
+.hero h1 { color:#D2042D; font-size:3rem; margin-bottom:20px; animation: glowPulse 2s ease-in-out infinite; }
+.hero p { color:#fff; font-size:1.2rem; max-width:800px; margin:0 auto; opacity:0.9; }
+@keyframes glowPulse{0%{text-shadow:0 0 8px #D2042D,0 0 16px #D2042D;}50%{text-shadow:0 0 16px #D2042D,0 0 32px #D2042D;}100%{text-shadow:0 0 8px #D2042D,0 0 16px #D2042D;}}
 
 /* ========== Tabs ========== */
-.tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 2rem 0;
-  gap: 6px;
-}
-
-.tab-button {
-  background: #0b0b0b;
-  color: #fff;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-  position: relative;
-}
-
-.tab-button.active {
-  background: #D2042D;
-  color: #fff;
-  box-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
-}
-
-.tab-button:hover {
-  background: #1a1a1a;
-  transform: scale(1.05);
-  box-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
-}
-
-.tab-button::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #D2042D;
-  transition: width 0.3s;
-}
-
-.tab-button:hover::after,
-.tab-button.active::after {
-  width: 100%;
-}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;margin:2rem 0;gap:6px;}
+.tab-button{background:#0b0b0b;color:#fff;border:none;padding:0.7rem 1.5rem;cursor:pointer;border-radius:5px;font-size:1rem;transition:0.3s;position:relative;}
+.tab-button.active{background:#D2042D; color:#fff; box-shadow:0 0 8px rgba(210,4,45,0.5);}
+.tab-button:hover{background:#1a1a1a; transform:scale(1.05); box-shadow:0 0 8px rgba(210,4,45,0.5);}
+.tab-button::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:#D2042D;transition:0.3s;}
+.tab-button:hover::after,.tab-button.active::after{width:100%;}
 
 /* ========== Tab Content ========== */
-.tab-content {
-  max-width: 1000px;
-  margin: 0 auto 2rem auto;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.tab-content.active {
-  display: block;
-  opacity: 1;
-}
+.tab-content{max-width:1000px;margin:0 auto 2rem auto;display:none;opacity:0;transition:opacity 0.3s ease;}
+.tab-content.active{display:block;opacity:1;}
 
 /* ========== State Tabs ========== */
-.state-tabs {
-  display: flex;
-  overflow-x: auto;
-  gap: 6px;
-  padding: 5px 0;
-  margin-bottom: 15px;
-}
-
-.state-button {
-  flex: 0 0 auto;
-  background: #111;
-  border: 1px solid #333;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: 0.3s;
-}
-
-.state-button.active,
-.state-button:hover {
-  background: #222;
-  border-color: #D2042D;
-  box-shadow: 0 0 6px rgba(210, 4, 45, 0.4);
-}
+.state-tabs{display:flex;overflow-x:auto;gap:6px;padding:5px 0;margin-bottom:15px;}
+.state-button{flex:0 0 auto;background:#111;border:1px solid #333;color:#fff;padding:6px 12px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:0.3s;}
+.state-button.active, .state-button:hover{background:#222; border-color:#D2042D; box-shadow:0 0 6px rgba(210,4,45,0.4);}
 
 /* ========== Search ========== */
-.search-container {
-  text-align: center;
-  margin-bottom: 15px;
-}
+.search-container{text-align:center;margin-bottom:15px;}
+.search-container input{padding:8px 12px;width:60%;max-width:400px;border-radius:6px;border:1px solid #333;background:#0b0b0b;color:#fff;}
 
-.search-container input {
-  padding: 8px 12px;
-  width: 60%;
-  max-width: 400px;
-  border-radius: 6px;
-  border: 1px solid #333;
-  background: #0b0b0b;
-  color: #fff;
-}
-
-/* ========== Documentation Cards ========== */
-.doc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 10px;
-}
-
-.doc-card {
-  background: #0d0d0d;
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  color: #fff;
-}
-
-.doc-card:hover {
-  transform: scale(1.02);
-  background: #111;
-  box-shadow: 0 0 10px rgba(210, 4, 45, 0.4);
-}
-
-.doc-card h3 {
-  color: #D2042D;
-  margin-bottom: 8px;
-  text-shadow: 0 0 4px rgba(210, 4, 45, 0.5);
-}
-
-.doc-card p {
-  color: #ccc;
-}
-
-.more-btn {
-  display: inline-block;
-  margin-top: 5px;
-  padding: 6px 12px;
-  background: #D2042D;
-  color: #fff;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.more-btn:hover {
-  background: #fff;
-  color: #D2042D;
-  box-shadow: 0 0 8px rgba(210, 4, 45, 0.5);
-}
+/* ========== Doc Cards ========== */
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;padding:10px;}
+.doc-card{background:#0d0d0d;border-radius:10px;padding:1.5rem;transition:0.2s;color:#fff;}
+.doc-card:hover{transform:scale(1.02);background:#111;box-shadow:0 0 10px rgba(210,4,45,0.4);}
+.doc-card h3{color:#D2042D;margin-bottom:8px;text-shadow:0 0 4px rgba(210,4,45,0.5);}
+.doc-card p{color:#ccc;}
+.more-btn{display:inline-block;margin-top:5px;padding:6px 12px;background:#D2042D;color:#fff;border-radius:5px;transition:0.3s;}
+.more-btn:hover{background:#fff;color:#D2042D;box-shadow:0 0 8px rgba(210,4,45,0.5);}
 
 /* ========== Footer ========== */
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: #0b0b0b;
-  color: #fff;
-  border-top: 1px solid #1f1f1f;
-  flex-wrap: wrap;
-}
-
-.footer-buttons a {
-  color: #D2042D;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-  padding: 6px 0;
-}
-
-.footer-buttons a:hover {
-  color: #fff;
-  text-shadow: 0 0 8px #D2042D;
-}
-
-@media (max-width: 600px) {
-  footer { flex-direction: column; text-align: center; }
-  .footer-buttons { margin-top: 10px; }
-}
+footer{display:flex;justify-content:space-between;align-items:center;padding:15px 30px;background:#0b0b0b;color:#fff;border-top:1px solid #1f1f1f;flex-wrap:wrap;}
+.footer-buttons a{color:#D2042D;text-decoration:none;font-size:14px;padding:6px 0;transition:0.3s;}
+.footer-buttons a:hover{color:#fff;text-shadow:0 0 8px #D2042D;}
 </style>
 </head>
 <body>
 
 <header>
-  <nav>
-    <div class="logo">Crime Network</div>
-    <div class="hamburger">&#9776;</div>
-    <ul>
-      <li><a href="index">Home</a></li>
-      <li><a href="documentation">Documentation</a></li>
-      <li><a href="staff">Staff</a></li>
-      <li><a href="about">About</a></li>
-    </ul>
-  </nav>
+<nav>
+  <div class="logo">Crime Network</div>
+  <div class="hamburger">&#9776;</div>
+  <ul>
+    <li><a href="index">Home</a></li>
+    <li><a href="documentation" class="active">Documentation</a></li>
+    <li><a href="staff">Staff</a></li>
+    <li><a href="about">About</a></li>
+  </ul>
+</nav>
 
-  <div class="hero">
-    <h1>Investigations & Documentation Hub</h1>
-    <p>Insights into investigations, cyber threats, and real-world crime.</p>
-  </div>
+<div class="hero">
+<h1>Investigations & Documentation Hub</h1>
+<p>Insights into investigations, cyber threats, and real-world crime.</p>
+</div>
 </header>
 
-<!-- Keep your main content here exactly as before -->
 <main>
 <div class="tabs">
-<button class="tab-button active" onclick="openTab(event,'gang-docs')">Gang Documentation</button>
-<button class="tab-button" onclick="openTab(event,'irl-crime')">IRL Crime Documentation</button>
-<button class="tab-button" onclick="openTab(event,'security')">Security Breaches</button>
-<button class="tab-button" onclick="openTab(event,'cyber')">Cyber Crimes</button>
+  <button class="tab-button active" onclick="openTab(event,'gang-docs')">Gang Documentation</button>
+  <button class="tab-button" onclick="openTab(event,'irl-crime')">IRL Crime Documentation</button>
+  <button class="tab-button" onclick="openTab(event,'security')">Security Breaches</button>
+  <button class="tab-button" onclick="openTab(event,'cyber')">Cyber Crimes</button>
 </div>
 
-<!-- ================= Gang Documentation ================= -->
+<!-- ================= Tab Contents ================= -->
 <div id="gang-docs" class="tab-content active">
-<div class="search-container">
-<input type="text" placeholder="Search gangs..." onkeyup="searchDocs(this,'gang-docs')">
-</div>
-<div class="state-tabs">
-<button class="state-button active" onclick="openState(event,'gang-docs','ohio')">Ohio</button>
-<button class="state-button" onclick="openState(event,'gang-docs','california')">California</button>
-<button class="state-button" onclick="openState(event,'gang-docs','illinois')">Illinois</button>
-</div>
-<div id="gang-docs-ohio" class="state-content" style="display:block;">
-<div class="doc-grid">
-<!-- Cards -->
-<div class="doc-card">
-<h3>BL-800 (Columbus, OH)</h3>
-<p>BL-800 is a notorious gang operating in Columbus, involved in multiple criminal activities.</p>
-<a href="docs/ohio/bl800" class="more-btn">Click me for more</a>
-</div>
-<div class="doc-card">
-<h3>1600EBK / 600 (Columbus-Portsmouth, OH)</h3>
-<p>1600 is a dangerous Columbus-based gang engaged in violent crimes, drug deals, and organized theft.</p>
-<a href="docs/ohio/1600" class="more-btn">Click me for more</a>
-</div>
-<!-- Additional placeholders as in your original file -->
-<div class="doc-card"><h3>PlaceHolder</h3><p>PlaceHolder</p><a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a></div>
-<div class="doc-card"><h3>PlaceHolder</h3><p>PlaceHolder</p><a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a></div>
-<div class="doc-card"><h3>PlaceHolder</h3><p>PlaceHolder</p><a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a></div>
-<div class="doc-card"><h3>PlaceHolder</h3><p>PlaceHolder</p><a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a></div>
-<div class="doc-card"><h3>PlaceHolder</h3><p>PlaceHolder</p><a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a></div>
-<div class="doc-card"><h3>PlaceHolder</h3><p>PlaceHolder</p><a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a></div>
-</div>
+  <div class="search-container"><input type="text" placeholder="Search gangs..." onkeyup="searchDocs(this,'gang-docs')"></div>
+  <div class="state-tabs">
+    <button class="state-button active" onclick="openState(event,'gang-docs','ohio')">Ohio</button>
+    <button class="state-button" onclick="openState(event,'gang-docs','california')">California</button>
+    <button class="state-button" onclick="openState(event,'gang-docs','illinois')">Illinois</button>
+  </div>
+  <div id="gang-docs-ohio" class="state-content" style="display:block;">
+    <div class="doc-grid">
+      <div class="doc-card"><h3>BL-800 (Columbus, OH)</h3><p>BL-800 is a notorious gang...</p><a href="docs/ohio/bl800" class="more-btn">Click me for more</a></div>
+      <div class="doc-card"><h3>1600EBK / 600 (Columbus-Portsmouth, OH)</h3><p>1600 is a dangerous Columbus-based gang...</p><a href="docs/ohio/1600" class="more-btn">Click me for more</a></div>
+    </div>
+  </div>
+  <div id="gang-docs-california" class="state-content" style="display:none;"><div class="doc-grid"><div class="doc-card"><h3>Venice Kings (LA)</h3><p>Venice Kings operate in L.A...</p><a href="docs/venicekings/index" class="more-btn">Click me for more</a></div></div></div>
+  <div id="gang-docs-illinois" class="state-content" style="display:none;"><div class="doc-grid"><div class="doc-card"><h3>Northside Crew (Chicago, IL)</h3><p>Northside Crew is a Chicago-based gang...</p><a href="docs/northside/index" class="more-btn">Click me for more</a></div></div></div>
 </div>
 
-<div id="gang-docs-california" class="state-content" style="display:none;">
-<div class="doc-grid">
-<div class="doc-card">
-<h3>Venice Kings (Los Angeles, CA)</h3>
-<p>Venice Kings operate in L.A. and are involved in local gang conflicts and organized crime.</p>
-<a href="docs/venicekings/index" class="more-btn">Click me for more</a>
-</div>
-</div>
-</div>
-
-<div id="gang-docs-illinois" class="state-content" style="display:none;">
-<div class="doc-grid">
-<div class="doc-card">
-<h3>Northside Crew (Chicago, IL)</h3>
-<p>Northside Crew is a Chicago-based gang active in street and organized criminal activity.</p>
-<a href="docs/northside/index" class="more-btn">Click me for more</a>
-</div>
-</div>
-</div>
-</div>
-
-<!-- ================= IRL Crime Documentation ================= -->
 <div id="irl-crime" class="tab-content">
-<div class="search-container">
-<input type="text" placeholder="Search IRL crimes..." onkeyup="searchDocs(this,'irl-crime')">
-</div>
-<div class="state-tabs">
-<button class="state-button active" onclick="openState(event,'irl-crime','ohio')">Ohio</button>
-<button class="state-button" onclick="openState(event,'irl-crime','california')">California</button>
-</div>
-<div id="irl-crime-ohio" class="state-content" style="display:block;">
-<div class="doc-grid">
-<div class="doc-card">
-<h3>Bank Heist (Cincinnati, OH)</h3>
-<p>A major bank heist in Cincinnati resulting in multiple arrests.</p>
-<a href="docs/bankheist/index" class="more-btn">Click me for more</a>
-</div>
-<div class="doc-card">
-<h3>Drug Bust (Cleveland, OH)</h3>
-<p>Police seized a large quantity of illegal drugs in Cleveland operation.</p>
-<a href="docs/drugbust/index" class="more-btn">Click me for more</a>
-</div>
-</div>
-</div>
-<div id="irl-crime-california" class="state-content" style="display:none;">
-<div class="doc-grid">
-<div class="doc-card">
-<h3>Cyber Fraud Case (LA, CA)</h3>
-<p>A sophisticated cyber fraud operation targeting local businesses.</p>
-<a href="docs/cyberfraud/index" class="more-btn">Click me for more</a>
-</div>
-</div>
-</div>
+  <div class="search-container"><input type="text" placeholder="Search IRL crimes..." onkeyup="searchDocs(this,'irl-crime')"></div>
+  <div class="state-tabs">
+    <button class="state-button active" onclick="openState(event,'irl-crime','ohio')">Ohio</button>
+    <button class="state-button" onclick="openState(event,'irl-crime','california')">California</button>
+  </div>
+  <div id="irl-crime-ohio" class="state-content" style="display:block;">
+    <div class="doc-grid">
+      <div class="doc-card"><h3>Bank Heist (Cincinnati, OH)</h3><p>A major bank heist in Cincinnati...</p><a href="docs/bankheist/index" class="more-btn">Click me for more</a></div>
+      <div class="doc-card"><h3>Drug Bust (Cleveland, OH)</h3><p>Police seized a large quantity of illegal drugs...</p><a href="docs/drugbust/index" class="more-btn">Click me for more</a></div>
+    </div>
+  </div>
+  <div id="irl-crime-california" class="state-content" style="display:none;">
+    <div class="doc-grid"><div class="doc-card"><h3>Cyber Fraud Case (LA, CA)</h3><p>A sophisticated cyber fraud operation...</p><a href="docs/cyberfraud/index" class="more-btn">Click me for more</a></div></div>
+  </div>
 </div>
 
-<!-- ================= Security Breaches ================= -->
 <div id="security" class="tab-content">
-<div class="search-container">
-<input type="text" placeholder="Search security breaches..." onkeyup="searchDocs(this,'security')">
-</div>
-<div class="doc-grid">
-<div class="doc-card">
-<h3>Corporate Data Leak</h3>
-<p>Major company exposed sensitive customer information.</p>
-<a href="docs/corpdata/index" class="more-btn">Click me for more</a>
-</div>
-</div>
+  <div class="search-container"><input type="text" placeholder="Search security breaches..." onkeyup="searchDocs(this,'security')"></div>
+  <div class="doc-grid"><div class="doc-card"><h3>Corporate Data Leak</h3><p>Major company exposed sensitive info...</p><a href="docs/corpdata/index" class="more-btn">Click me for more</a></div></div>
 </div>
 
-<!-- ================= Cyber Crimes ================= -->
 <div id="cyber" class="tab-content">
-<div class="search-container">
-<input type="text" placeholder="Search cyber crimes..." onkeyup="searchDocs(this,'cyber')">
-</div>
-<div class="doc-grid">
-<div class="doc-card">
-<h3>Ransomware Attack</h3>
-<p>Widespread ransomware targeting financial institutions.</p>
-<a href="docs/ransomware/index" class="more-btn">Click me for more</a>
-</div>
-</div>
+  <div class="search-container"><input type="text" placeholder="Search cyber crimes..." onkeyup="searchDocs(this,'cyber')"></div>
+  <div class="doc-grid"><div class="doc-card"><h3>Ransomware Attack</h3><p>Widespread ransomware targeting institutions...</p><a href="docs/ransomware/index" class="more-btn">Click me for more</a></div></div>
 </div>
 </main>
 
 <footer>
-  <div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
-  <div class="footer-buttons">
-    <a href="privacy">Privacy Policy</a>
-    <a href="tos">Terms of Service</a>
-    <a href="about">About</a>
-  </div>
+<div class="footer-text">&copy; 2025 Crime Network. All rights reserved.</div>
+<div class="footer-buttons">
+<a href="privacy">Privacy Policy</a>
+<a href="tos">Terms of Service</a>
+<a href="about">About</a>
+</div>
 </footer>
 
 <script>
+// Hamburger
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
-hamburger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
+hamburger.addEventListener('click',()=>{nav.classList.toggle('active');});
+
+// Top-level tabs
+function openTab(evt,tabId){
+  document.querySelectorAll(".tab-button").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".tab-content").forEach(c=>{c.style.display="none"; c.classList.remove("active");});
+  evt.currentTarget.classList.add("active");
+  document.getElementById(tabId).style.display="block";
+  document.getElementById(tabId).classList.add("active");
+}
+
+// State tabs
+function openState(evt,tabId,state){
+  const container = document.getElementById(tabId);
+  container.querySelectorAll(".state-button").forEach(b=>b.classList.remove("active"));
+  evt.currentTarget.classList.add("active");
+  container.querySelectorAll(".state-content").forEach(c=>c.style.display="none");
+  const stateContent = document.getElementById(`${tabId}-${state}`);
+  if(stateContent) stateContent.style.display="block";
+}
+
+// Search function
+function searchDocs(input,tabId){
+  const filter = input.value.toLowerCase();
+  const container = document.getElementById(tabId);
+  container.querySelectorAll(".doc-card").forEach(card=>{
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(filter) ? "" : "none";
+  });
+}
 </script>
 
 </body>
