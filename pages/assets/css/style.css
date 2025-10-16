@@ -30,9 +30,7 @@ nav {
   padding: 20px 40px;
   background-color: #000;
   border-bottom: 1px solid #1f1f1f;
-  flex-wrap: wrap;
   z-index: 1000;
-  position: relative;
 }
 
 .logo {
@@ -42,27 +40,12 @@ nav {
   text-shadow: 0 0 8px #D2042D;
 }
 
-.hamburger {
-  color: #D2042D;
-  font-size: 1.8rem;
-  cursor: pointer;
-  display: none;
-  transition: 0.3s;
-}
-
-.hamburger:hover {
-  text-shadow: 0 0 10px #D2042D;
-  transform: scale(1.1);
-}
-
-/* Nav Links */
 nav ul {
   list-style: none;
   display: flex;
   gap: 25px;
   margin: 0;
   padding: 0;
-  transition: 0.4s ease;
 }
 
 nav ul li a {
@@ -70,25 +53,11 @@ nav ul li a {
   text-decoration: none;
   font-weight: 500;
   transition: 0.3s;
-  position: relative;
-}
-
-nav ul li a::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #D2042D;
-  transition: width 0.3s;
 }
 
 nav ul li a:hover {
   color: #D2042D;
   text-shadow: 0 0 8px #D2042D;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
 }
 
 /* ================= Hero ================= */
@@ -150,44 +119,6 @@ nav ul li a:hover::after {
   opacity: 0.9;
 }
 
-/* ================= Footer ================= */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: #000;
-  border-top: 1px solid #1f1f1f;
-  color: #fff;
-  z-index: 1000;
-}
-
-.footer-text {
-  font-size: 14px;
-  text-align: left;
-}
-
-.footer-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 18px;
-}
-
-.footer-buttons a {
-  color: #D2042D;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.footer-buttons a:hover {
-  text-shadow: 0 0 8px #D2042D;
-}
-
 /* ================= Staff Cards ================= */
 .staff-cards {
   display: flex;
@@ -196,7 +127,7 @@ footer {
   justify-content: center;
   align-items: flex-start;
   padding: 2rem;
-  margin-bottom: 80px; /* make space for fixed footer */
+  margin-bottom: 80px; /* space for fixed footer */
 }
 
 .staff-card {
@@ -231,31 +162,38 @@ footer {
   border: 3px solid #D2042D;
 }
 
-/* ================= Responsive ================= */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+/* ================= Footer ================= */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #000;
+  border-top: 1px solid #1f1f1f;
+  color: #fff;
+  z-index: 1000;
+}
 
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #0b0b0b;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #1f1f1f;
-  }
+.footer-text {
+  font-size: 14px;
+}
 
-  nav ul.active {
-    display: flex;
-  }
+.footer-buttons {
+  display: flex;
+  gap: 18px;
+}
 
-  nav ul li {
-    padding: 10px 0;
-  }
+.footer-buttons a {
+  color: #D2042D;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
 
-  .staff-cards {
-    margin-bottom: 100px; /* more space for mobile footer */
-  }
+.footer-buttons a:hover {
+  text-shadow: 0 0 8px #D2042D;
 }
