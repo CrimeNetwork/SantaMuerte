@@ -7,46 +7,86 @@
 <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.ico">
 <style>
-/* ================= General & Existing CSS ================= */
-body { margin:0; font-family: Arial,sans-serif; background:#121212; color:#f1f1f1; }
-a { color:#00bfff; text-decoration:none; }
-header { background:#1e1e1e; padding-bottom:2rem; }
+/* ================= General & Updated CSS ================= */
+body { 
+  margin:0; 
+  font-family: Arial,sans-serif; 
+  background:#000; /* Black background */
+  color:#fff; /* White text */
+}
+a { color:#fff; text-decoration:none; }
+a:hover { color:#dc143c; text-shadow:0 0 2px #ff6f91; }
+
+/* Header & Navigation */
+header { background:#111; padding-bottom:2rem; }
 nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
 nav ul { list-style:none; display:flex; gap:1rem; }
 nav li { padding:0.5rem 1rem; }
-nav li:hover { background:#333; border-radius:5px; }
-.hamburger { display:none; font-size:1.5rem; color:#00bfff; cursor:pointer; }
+nav li:hover { background:#222; border-radius:5px; }
+nav li a.active { color:#dc143c; text-shadow:0 0 2px #ff6f91; }
+.hamburger { display:none; font-size:1.5rem; color:#dc143c; cursor:pointer; }
+
+/* Hero Section */
 .hero { text-align:center; padding:4rem 2%; }
-.hero h1 { font-size:clamp(1.6rem,5vw,3rem); }
+.hero h1 { font-size:clamp(1.6rem,5vw,3rem); color:#dc143c; text-shadow:0 0 2px #ff6f91; }
 .hero p { font-size:clamp(0.9rem,2.5vw,1.2rem); max-width:800px; margin:0 auto; }
+
+/* Tabs */
 .tabs { display:flex; justify-content:center; flex-wrap:wrap; margin:2rem 0; }
-.tab-button { background:#1e1e1e; color:#f1f1f1; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s; }
-.tab-button.active { background:#00bfff; color:#121212; }
-.tab-button:hover { background:#333; transform:scale(1.05); }
+.tab-button { background:#111; color:#fff; border:none; padding:0.7rem 1.5rem; cursor:pointer; border-radius:5px; font-size:1rem; transition: background 0.3s, transform 0.2s; }
+.tab-button.active { background:#dc143c; color:#fff; text-shadow:0 0 2px #ff6f91; }
+.tab-button:hover { background:#222; transform:scale(1.05); }
+
+/* Tab Content */
 .tab-content { max-width:1000px; margin:0 auto 2rem auto; display:none; opacity:0; transition:opacity 0.3s ease; }
 .tab-content.active { display:block; opacity:1; }
-.search-container { text-align:center; margin-bottom:15px; }
-.search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #333; background:#1a1a1a; color:#fff; }
+
+/* State Tabs */
 .state-tabs { display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; gap:6px; padding:5px 0; margin-bottom:15px; }
 .state-tabs::-webkit-scrollbar { height:6px; }
-.state-tabs::-webkit-scrollbar-track { background:#1a1a1a; }
-.state-tabs::-webkit-scrollbar-thumb { background:#333; border-radius:3px; }
-.state-button { flex:0 0 auto; background:#191919; border:1px solid #333; color:#fff; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
-.state-button.active, .state-button:hover { background:#222; }
+.state-tabs::-webkit-scrollbar-track { background:#111; }
+.state-tabs::-webkit-scrollbar-thumb { background:#222; border-radius:3px; }
+.state-button { flex:0 0 auto; background:#111; border:1px solid #222; color:#fff; padding:6px 12px; border-radius:5px; cursor:pointer; white-space:nowrap; }
+.state-button.active, .state-button:hover { background:#222; border-color:#dc143c; }
+
+/* Documentation Cards */
 .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; padding:10px; }
-.doc-card { background:#1e1e1e; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
-.doc-card:hover { transform:scale(1.02); background:#222; box-shadow:0 0 10px rgba(0,191,255,0.3); }
-.doc-card h3 { margin:0 0 8px; }
+.doc-card { background:#111; border-radius:10px; padding:1.5rem; box-sizing:border-box; transition: transform 0.2s, box-shadow 0.2s, background 0.2s; }
+.doc-card:hover { transform:scale(1.02); background:#222; box-shadow:0 0 10px rgba(220,20,60,0.3); }
+.doc-card h3 { margin:0 0 8px; color:#dc143c; text-shadow:0 0 2px #ff6f91; }
 .doc-card p { margin:0 0 12px; color:#ccc; }
-.more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#00bfff; color:#121212; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s; }
-.more-btn:hover { background:#00ffff; transform:scale(1.05); }
-footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#0b0b0b; color:#e5e5e5; flex-wrap:wrap; border-top:1px solid #1f1f1f; }
+.more-btn { display:inline-block; margin-top:5px; padding:6px 12px; background:#dc143c; color:#fff; border-radius:5px; text-decoration:none; transition:background 0.3s, transform 0.2s; }
+.more-btn:hover { background:#ff6f91; transform:scale(1.05); }
+
+/* Search Inputs */
+.search-container input { padding:8px 12px; width:60%; max-width:400px; border-radius:6px; border:1px solid #222; background:#111; color:#fff; }
+.search-container input::placeholder { color:#ccc; }
+
+/* Footer */
+footer { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#111; color:#fff; flex-wrap:wrap; border-top:1px solid #222; }
 .footer-text { font-size:14px; }
 .footer-buttons { display:flex; gap:18px; }
-.footer-buttons a { color:#00b3b3; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
-.footer-buttons a:hover { color:#00ffff; text-shadow:0 0 8px #00ffff; }
-@media (max-width:768px){ nav{flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;} nav ul{flex-direction:column;width:100%;padding:0;} nav li{width:100%;text-align:center;padding:0.7rem 0;} .hero h1{font-size:2rem;} .hero p{font-size:1rem;} .search-container input{width:80%;} }
-@media (max-width:480px){ nav ul{display:none;} nav.active ul{display:flex;flex-direction:column;width:100%;} .hamburger{display:block;} .hero{padding:2rem 1rem;} .hero h1{font-size:1.6rem;} .hero p{font-size:0.9rem;} .search-container input{width:95%;} .doc-grid{padding:5px;} }
+.footer-buttons a { color:#dc143c; text-decoration:none; font-size:14px; padding:6px 0; transition:0.3s; }
+.footer-buttons a:hover { color:#ff6f91; text-shadow:0 0 2px #ff6f91; }
+
+/* Responsive */
+@media (max-width:768px){ 
+  nav{flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;} 
+  nav ul{flex-direction:column;width:100%;padding:0;} 
+  nav li{width:100%;text-align:center;padding:0.7rem 0;} 
+  .hero h1{font-size:2rem;} 
+  .hero p{font-size:1rem;} 
+  .search-container input{width:80%;} 
+}
+@media (max-width:480px){ 
+  nav ul{display:none;} nav.active ul{display:flex;flex-direction:column;width:100%;} 
+  .hamburger{display:block;} 
+  .hero{padding:2rem 1rem;} 
+  .hero h1{font-size:1.6rem;} 
+  .hero p{font-size:0.9rem;} 
+  .search-container input{width:95%;} 
+  .doc-grid{padding:5px;} 
+}
 </style>
 </head>
 <body>
@@ -86,6 +126,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <button class="state-button" onclick="openState('gang-docs','california')">California</button>
 <button class="state-button" onclick="openState('gang-docs','illinois')">Illinois</button>
 </div>
+
 <div id="gang-docs-ohio" class="state-content" style="display:block;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -93,31 +134,19 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <p>BL-800 is a notorious gang operating in Columbus, involved in multiple criminal activities.</p>
 <a href="docs/ohio/bl800" class="more-btn">Click me for more</a>
 </div>
-  
+
 <div class="doc-card">
 <h3>1600EBK / 600 (Columbus-Portsmouth, OH)</h3>
 <p>1600 is a dangerous Columbus-based gang engaged in violent crimes, drug deals, and organized theft.</p>
 <a href="docs/ohio/1600" class="more-btn">Click me for more</a>
 </div>
-  
+
 <div class="doc-card">
 <h3>PlaceHolder</h3>
 <p>PlaceHolder</p>
 <a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a>
 </div>
-    
-<div class="doc-card">
-<h3>PlaceHolder</h3>
-<p>PlaceHolder</p>
-<a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a>
-</div>
-        
-<div class="doc-card">
-<h3>PlaceHolder</h3>
-<p>PlaceHolder</p>
-<a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a>
-</div>
-  
+
 <div class="doc-card">
 <h3>PlaceHolder</h3>
 <p>PlaceHolder</p>
@@ -134,9 +163,22 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <h3>PlaceHolder</h3>
 <p>PlaceHolder</p>
 <a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a>
-</div>  
+</div>
+
+<div class="doc-card">
+<h3>PlaceHolder</h3>
+<p>PlaceHolder</p>
+<a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a>
+</div>
+
+<div class="doc-card">
+<h3>PlaceHolder</h3>
+<p>PlaceHolder</p>
+<a href="docs/ohio/comingsoon" class="more-btn">Click me for more</a>
 </div>
 </div>
+</div>
+
 <div id="gang-docs-california" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -146,6 +188,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 </div>
+
 <div id="gang-docs-illinois" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -166,6 +209,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <button class="state-button active" onclick="openState('irl-crime','ohio')">Ohio</button>
 <button class="state-button" onclick="openState('irl-crime','california')">California</button>
 </div>
+
 <div id="irl-crime-ohio" class="state-content" style="display:block;">
 <div class="doc-grid">
 <div class="doc-card">
@@ -173,6 +217,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 <p>A major bank heist in Cincinnati resulting in multiple arrests.</p>
 <a href="docs/bankheist/index" class="more-btn">Click me for more</a>
 </div>
+
 <div class="doc-card">
 <h3>Drug Bust (Cleveland, OH)</h3>
 <p>Police seized a large quantity of illegal drugs in Cleveland operation.</p>
@@ -180,6 +225,7 @@ footer { display:flex; justify-content:space-between; align-items:center; paddin
 </div>
 </div>
 </div>
+
 <div id="irl-crime-california" class="state-content" style="display:none;">
 <div class="doc-grid">
 <div class="doc-card">
